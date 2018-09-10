@@ -16,11 +16,11 @@ const app = {
   template
 };
 
-new Vue({
+const mountedApp = new Vue({
   el: '[data-app]',
   router,
   render: h => h(app),
   mounted () {
     document.dispatchEvent(new Event('render-event'))
   }
-})
+});
