@@ -11,7 +11,7 @@
     "source": {
       "root": "src/scripts/",
       "files": "src/scripts/**/*.js",
-      "entry": "src/scripts/index.js"
+      "entry": "src/scripts/app.js"
     },
     "dist": {
       "root": "dist",
