@@ -15,7 +15,7 @@ module.exports = {
     new ExtractTextPlugin(project.styles.dist.filename.prod),
     new PrerenderSPAPlugin({
       staticDir: `${__dirname}/${project.scripts.dist.root}`,
-      routes: [ '/' ],
+      routes: ['/', '/author'],
       renderer: new Renderer({
         headless: false,
         renderAfterDocumentEvent: 'render-event'
