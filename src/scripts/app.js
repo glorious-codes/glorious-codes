@@ -1,8 +1,15 @@
 import '@styles/_native.styl'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import router from './router'
+import routes from './routes'
 import template from './app.html'
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes,
+  mode: 'history'
+});
 
 const app = {
   name: 'app',
