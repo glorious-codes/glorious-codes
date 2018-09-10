@@ -1,14 +1,15 @@
 const fs = require('fs'),
   webpack = require('webpack'),
-  ExtractTextPlugin = require("extract-text-webpack-plugin");
+  ExtractTextPlugin = require("extract-text-webpack-plugin"),
+  project = require('./project.json');
 
 module.exports = {
   devtool: '#eval-source-map',
   output: {
-    filename: 'bundle.js'
+    filename: project.scripts.dist.filename.dev
   },
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin(project.styles.dist.filename.dev)
   ],
   devServer: {
     historyApiFallback: true,
