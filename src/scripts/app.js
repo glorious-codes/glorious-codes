@@ -1,9 +1,14 @@
 import '@styles/_native.styl'
 import Vue from 'vue'
+import VueHead from 'vue-head'
 import VueRouter from 'vue-router'
 import routes from './routes'
 import template from './app.html'
 
+Vue.use(VueHead, {
+  separator: '',
+  complement: ''
+})
 Vue.use(VueRouter);
 
 const router = new VueRouter({

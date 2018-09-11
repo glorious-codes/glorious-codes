@@ -1,14 +1,14 @@
 {
-  "name": "prerender-spa-plugin-example-vue2-webpack-router",
-  "version": "1.0.0",
-  "private": true,
-  "author": "Drew Lustro <drewlustro@gmail.com>",
+  "name": "glorious-codes",
+  "version": "0.1.0",
+  "author": "Rafael Camargo <hello@rafaelcamargo.com>",
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "cross-env NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --hide-modules"
   },
   "dependencies": {
     "vue": "^2.5.11",
+    "vue-head": "^2.0.12",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
