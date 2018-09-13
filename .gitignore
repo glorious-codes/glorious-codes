@@ -184,6 +184,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Built files
+.babelrc
 dist/
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudiocode
