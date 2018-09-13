@@ -47,7 +47,12 @@
   },
   "tests": {
     "source": {
-      "files": "src/scripts/**/!(index|router).js"
+      "files": "src/scripts/**/!(app|routes).js"
+    }
+  },
+  "mocks": {
+    "source": {
+      "root": "src/mocks/"
     }
   },
   "environments": {
