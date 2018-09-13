@@ -1,5 +1,6 @@
 import seoService from '@scripts/base/services/seo/seo';
 import logo from '@scripts/base/components/logo/logo';
+import heroHeading from '@scripts/base/components/hero-heading/hero-heading';
 import template from './home.html';
 
 const head = seoService.buildHead({
@@ -14,7 +15,8 @@ const head = seoService.buildHead({
 export default {
   name: 'home',
   components: {
-    logo
+    logo,
+    heroHeading
   },
   head,
   template
