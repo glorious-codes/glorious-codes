@@ -8,22 +8,5 @@ export default {
     logo
   },
   props: ['heading'],
-  data(){
-    return {
-      text: ''
-    }
-  },
-  created(){
-    this.setText(this.oneWordPerLine(this.heading));
-  },
-  methods: {
-    oneWordPerLine(text){
-      const words = text.split(' ');
-      return words.join('<br>');
-    },
-    setText(text){
-      this.text = text;
-    }
-  },
   template
-}
+};

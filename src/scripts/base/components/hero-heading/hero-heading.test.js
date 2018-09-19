@@ -17,8 +17,8 @@ describe('Hero Heading', () => {
     expect(wrapper.contains(logo)).toEqual(true);
   });
 
-  it('should show one word per line', () => {
+  it('should render a heading', () => {
     const wrapper = mountComponent({heading: 'Glorious Codes'});
-    expect(wrapper.find('h1').html()).toEqual('<h1>Glorious<br>Codes</h1>');
+    expect(wrapper.find('h1').html()).toEqual('<h1>Glorious Codes</h1>');
   });
 });
