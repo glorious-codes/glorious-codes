@@ -4,10 +4,14 @@
   "author": "Rafael Camargo <hello@rafaelcamargo.com>",
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "format": "./node_modules/eslint/bin/eslint.js './src/**/*.js'",
     "build": "cross-env NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --hide-modules",
     "test": "NODE_ENV=test && ./node_modules/jest/bin/jest.js"
   },
   "dependencies": {
+    "@glorious/demo": "^0.5.0",
+    "ionicons": "^2.0.1",
+    "prismjs": "^1.15.0",
     "vue": "^2.5.11",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1"
@@ -21,6 +25,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.7",
+    "eslint": "^5.6.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
     "html-loader": "^0.5.5",

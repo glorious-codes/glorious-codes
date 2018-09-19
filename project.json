@@ -40,6 +40,11 @@
       "filename": "[path][name]-[hash].[ext]"
     }
   },
+  "fonts": {
+    "dist": {
+      "root": "fonts/[name].[ext]"
+    }
+  },
   "favicon": {
     "source": {
       "file": "src/images/favicon-glorious-codes.png"

@@ -16,11 +16,12 @@ module.exports = {
     '@environment$': `<rootDir>/${project.environments.source.root}/development.js`,
     '@scripts\/(.*)$': `<rootDir>/${project.scripts.source.root}$1`,
     '@styles\/(.*)$': `<rootDir>/${project.styles.source.root}$1`,
-    '@mocks\/(.*)$': `<rootDir>/${project.mocks.source.root}$1`
+    '@mocks\/(.*)$': `<rootDir>/${project.mocks.source.root}$1`,
+    '^.+\\.css$': '<rootDir>/src/mocks/styles.js',
   },
   "setupTestFrameworkScriptFile": "<rootDir>/jest.config.vue.js",
   "transform": {
-    "^.+\\.(css|styl)$": "<rootDir>/src/mocks/styles.js",
+    '^.+\\.styl$': '<rootDir>/src/mocks/styles.js',
     "^.+\\.js$": "babel-jest",
     "^.+\\.html$": "html-loader-jest"
   }
