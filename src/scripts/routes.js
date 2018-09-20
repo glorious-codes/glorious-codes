@@ -1,16 +1,40 @@
-import home from '@scripts/home/views/home'
-import author from '@scripts/author/views/author'
+import codesHome from '@scripts/codes/views/home/home';
+import codesCookie from '@scripts/codes/views/cookie/cookie';
+import codesCrud from '@scripts/codes/views/crud/crud';
+import authorHome from '@scripts/author/views/home/home';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: home
+    name: 'codes',
+    component: codesHome,
+    appMenu: {
+      text: 'Codes'
+    }
+  },
+  {
+    path: '/cookie',
+    name: 'cookie',
+    component: codesCookie,
+    codesMenu: {
+      text: 'Glorious Cookie'
+    },
+  },
+  {
+    path: '/crud',
+    name: 'crud',
+    component: codesCrud,
+    codesMenu: {
+      text: 'Glorious Crud'
+    },
   },
   {
     path: '/author',
     name: 'author',
-    component: author
+    component: authorHome,
+    appMenu: {
+      text: 'Author'
+    },
   }
 ];
 
