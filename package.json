@@ -6,7 +6,8 @@
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "format": "./node_modules/eslint/bin/eslint.js './src/**/*.js'",
     "build": "cross-env NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --hide-modules",
-    "test": "NODE_ENV=test && ./node_modules/jest/bin/jest.js"
+    "test": "NODE_ENV=test && ./node_modules/jest/bin/jest.js",
+    "deploy": "./node_modules/firebase-tools/bin/firebase deploy --non-interactive"
   },
   "dependencies": {
     "@glorious/demo": "^0.5.0",
