@@ -88,6 +88,7 @@ describe('Crud Demo', () => {
       onCompleteDelay: 1300
     });
     expect(gDemoInstanceMock.respond).toHaveBeenCalledWith(
+/* eslint-disable indent */
 `{
   "_id" : "5b135939d58e2639309f59df",
   "name" : "Opa Bier",
