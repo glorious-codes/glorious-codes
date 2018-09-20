@@ -25,7 +25,7 @@ _public.buildHead = ({ title, description, keywords }) => {
       { property: 'og:title', content: title },
       { property: 'og:image', content: imageUrl }
     ]
-  }
+  };
 };
 
 export default _public;
