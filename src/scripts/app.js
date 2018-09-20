@@ -1,14 +1,16 @@
-import '@styles/_native.styl'
-import Vue from 'vue'
-import VueHead from 'vue-head'
-import VueRouter from 'vue-router'
-import routes from './routes'
-import template from './app.html'
+import '@styles/_native.styl';
+import Vue from 'vue';
+import VueHead from 'vue-head';
+import VueRouter from 'vue-router';
+import routes from './routes';
+import topbar from '@scripts/base/components/topbar/topbar';
+import routeService from '@scripts/base/services/route/route';
+import template from './app.html';
 
 Vue.use(VueHead, {
   separator: '',
   complement: ''
-})
+});
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -16,16 +18,22 @@ const router = new VueRouter({
   mode: 'history'
 });
 
+routeService.init(router);
+
 const app = {
   name: 'app',
+  components: {
+    topbar
+  },
   template
 };
 
+/* eslint-disable no-unused-vars */
 const mountedApp = new Vue({
   el: '[data-app]',
   router,
   render: h => h(app),
   mounted () {
-    document.dispatchEvent(new Event('render-event'))
+    document.dispatchEvent(new Event('render-event'));
   }
 });
