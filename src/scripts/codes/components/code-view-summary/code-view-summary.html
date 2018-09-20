@@ -1,0 +1,15 @@
+<div class="code-view-summary">
+  <view-summary :heading="heading" :hero-heading="heroHeading">
+    <slot></slot>
+    <list>
+      <list-item>
+        <external-link :href="externalLinkHref">
+          See documentation
+        </external-link>
+      </list-item>
+      <list-item>
+        <codes-back-link />
+      </list-item>
+    </list>
+  </view-summary>
+</div>
