@@ -1,6 +1,9 @@
 import seoService from '@scripts/base/services/seo/seo';
-import logo from '@scripts/base/components/logo/logo';
-import heroHeading from '@scripts/base/components/hero-heading/hero-heading';
+import row from '@scripts/base/components/row/row';
+import rowItem from '@scripts/base/components/row-item/row-item';
+import viewport from '@scripts/base/components/viewport/viewport';
+import viewSummary from '@scripts/base/components/view-summary/view-summary';
+import codesMenu from '@scripts/codes/components/codes-menu/codes-menu';
 import template from './home.html';
 
 const head = seoService.buildHead({
@@ -13,11 +16,14 @@ const head = seoService.buildHead({
 });
 
 export default {
-  name: 'home',
+  name: 'codes',
   components: {
-    logo,
-    heroHeading
+    row,
+    rowItem,
+    viewport,
+    viewSummary,
+    codesMenu
   },
   head,
   template
-}
+};
