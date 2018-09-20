@@ -1,0 +1,5 @@
+<summary class="view-summary">
+  <hero-heading v-if="heroHeading" :heading="heading" />
+  <h1 v-if="!heroHeading">{{ heading }}</h1>
+  <slot></slot>
+</summary>
