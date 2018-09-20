@@ -1,0 +1,9 @@
+<nav class="base-menu">
+  <list>
+    <list-item v-for="item in items" :key="item.routeName">
+      <base-link :route-name="item.routeName" :icon-name="item.iconName">
+        {{ item.label }}
+      </base-link>
+    </list-item>
+  </list>
+</nav>
