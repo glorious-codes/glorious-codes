@@ -1,0 +1,9 @@
+<span class="base-link">
+  <icon v-if="iconName" :name="iconName" />
+  <router-link v-if="routeName" :to="{ name: routeName }">
+    <slot></slot>
+  </router-link>
+  <a v-if="href" :href="href" target="_blank">
+    <slot></slot>
+  </a>
+</span>
