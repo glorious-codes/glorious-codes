@@ -1,9 +1,15 @@
 @require '_variables'
+@require '_mixins'
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
-html, body
+html, body, main, article
   margin 0
+  min-height 100vh
+
+html, body
+  color $color-grey-dark
   font-family Helvetica, Arial, sans-serif
+  font-size 16px
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
 
@@ -13,3 +19,26 @@ h1, h2, h3, h4, h5, h6
   font-family 'Fjalla One', Helvetica, Arial, sans-serif
   font-weight normal
   text-transform uppercase
+
+p
+  margin 0
+  line-height 1.2
+
+a
+  display inline-block
+  color $color-blue
+  text-decoration none
+  border-bottom-width 1px
+  border-bottom-style solid
+  border-bottom-color transparent
+  transition(all, 750ms)
+  &:hover,
+  &:focus,
+  &:active
+    color $color-blue
+    border-bottom-color $color-blue
+
+ul
+  margin 0
+  padding 0
+  list-style-type none
