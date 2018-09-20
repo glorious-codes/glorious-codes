@@ -1,0 +1,16 @@
+@require '_variables'
+@require '_mixins'
+
+.topbar
+  position fixed
+  top 0
+  left 0
+  right 0
+  padding 10px 0
+  background-color alpha($color-lightest, .95)
+  z-index $layer-low
+  clearfix()
+  .logo
+    float left
+  .app-menu
+    float left
