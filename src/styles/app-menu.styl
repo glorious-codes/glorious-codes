@@ -1,0 +1,30 @@
+@require '_variables.styl'
+@require '_mixins.styl'
+
+.app-menu
+  .list
+    clearfix()
+  .list-item
+    float left
+    line-height 50px
+    &:not(:first-child)
+      margin-top 0
+      margin-left 35px
+  a
+    color $color-grey
+    font-family 'Fjalla One', Helvetica, Arial, sans-serif
+    font-size $font-size-xs
+    text-transform uppercase
+    text-decoration none
+    &:hover,
+    &:focus,
+    &:active
+      color $color-grey-dark
+      border-bottom-color transparent
+    &.router-link-exact-active
+      color $color-primary
+      cursor default
+    .icon
+      margin-right 5px
+      color inherit
+      font-size $font-size-sm
