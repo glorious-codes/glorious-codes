@@ -18,7 +18,8 @@ module.exports = {
       routes: ['/', '/author', '/cookie', '/crud'],
       renderer: new Renderer({
         headless: false,
-        renderAfterDocumentEvent: 'render-event'
+        renderAfterDocumentEvent: 'render-event',
+        args: ['–no-sandbox', '–disable-setuid-sandbox']
       })
     })
   ]
