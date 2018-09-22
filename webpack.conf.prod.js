@@ -16,6 +16,13 @@ module.exports = {
     new PrerenderSPAPlugin({
       staticDir: `${__dirname}/${project.scripts.dist.root}`,
       routes: ['/', '/author', '/cookie', '/crud'],
+      minify: {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        decodeEntities: true,
+        keepClosingSlash: true,
+        sortAttributes: true
+      },
       renderer: new Renderer({
         headless: false,
         renderAfterDocumentEvent: 'render-event',
