@@ -34,10 +34,11 @@
   },
   "images": {
     "source": {
+      "root": "src/images/",
       "context": "src"
     },
     "dist": {
-      "filename": "[path][name]-[hash].[ext]"
+      "filename": "[path][name].[ext]"
     }
   },
   "fonts": {

@@ -60,7 +60,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@environment$': `${__dirname}/${project.environments.source.root}/${env}.js`,
       '@scripts': `${__dirname}/${project.scripts.source.root}`,
-      '@styles': `${__dirname}/${project.styles.source.root}`
+      '@styles': `${__dirname}/${project.styles.source.root}`,
+      '@images': `${__dirname}/${project.images.source.root}`
     }
   },
   plugins: [

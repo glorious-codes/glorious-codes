@@ -2,9 +2,9 @@ import ENV from '@environment';
 
 const _public = {};
 
-_public.buildHead = ({ title, description, keywords }) => {
+_public.buildHead = ({ title, description, keywords, imageFilename }) => {
   const desc = Array.isArray(description) ? description.join(' ') : description;
-  const imageUrl = `${ENV.APP.BASE_URL}/images/glorious-codes-1012x508.png`;
+  const imageUrl = `${ENV.APP.BASE_URL}/images/${imageFilename}`;
   return {
     title: {
       inner: title
@@ -14,9 +14,10 @@ _public.buildHead = ({ title, description, keywords }) => {
       { name: 'description', content: desc, id: 'desc' },
       { name: 'keywords', content: keywords },
       // Twitter
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: title },
-      { name: 'twitter:desc', content: desc },
-      { name: 'twitter:site', content: ENV.APP.BASE_URL },
+      { name: 'twitter:description', content: desc },
+      { name: 'twitter:site', content: '@gloriouscodes' },
       { name: 'twitter:creator', content: '@rcamargo' },
       // Google+ / Schema.org
       { itemprop: 'name', content: title },

@@ -1,3 +1,4 @@
+import '@images/cookie-916x460.png';
 import seoService from '@scripts/base/services/seo/seo';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
@@ -9,7 +10,8 @@ import template from './cookie.html';
 const head = seoService.buildHead({
   title: 'Glorious Cookie',
   description: 'The tiniest cookies library.',
-  keywords: 'glorious, cookie, browser'
+  keywords: 'glorious, cookie, browser',
+  imageFilename: 'cookie-916x460.png'
 });
 
 export default {
