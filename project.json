@@ -53,7 +53,7 @@
   },
   "tests": {
     "source": {
-      "files": "src/scripts/**/!(app|routes).js"
+      "files": "src/scripts/**/!(app|routes|inspectlet).js"
     }
   },
   "mocks": {
