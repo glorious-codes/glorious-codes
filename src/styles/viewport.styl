@@ -1,3 +1,10 @@
-.viewport
-  display flex
-  align-items center
+@require '_mixins'
+
++breakpoint('xs')
+  .viewport
+    padding-top 100px
+
++breakpoint('sm+')
+  .viewport
+    display flex
+    align-items center

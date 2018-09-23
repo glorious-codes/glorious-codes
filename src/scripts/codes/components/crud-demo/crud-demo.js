@@ -45,8 +45,7 @@ app.listen(9000);
           'curl localhost:9000/beers/5b135939d58e2639309f59df',
           { promptString: '$', onCompleteDelay: 1300 }
         )
-        .respond(
-          `{
+        .respond(`{
   "_id" : "5b135939d58e2639309f59df",
   "name" : "Opa Bier",
   "rating": "Awesome!",
