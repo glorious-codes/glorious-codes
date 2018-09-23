@@ -12,6 +12,7 @@ module.exports = {
     filename: project.scripts.dist.filename.prod
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin(project.styles.dist.filename.prod),
     new PrerenderSPAPlugin({
       staticDir: `${__dirname}/${project.scripts.dist.root}`,
