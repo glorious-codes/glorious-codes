@@ -9,6 +9,7 @@ export default {
     },
     INSPECTLET: {
       ENABLED: false,
+      BASE_URL: '',
       ID: 0 // There is no inspectlet configured for development
     }
   }
