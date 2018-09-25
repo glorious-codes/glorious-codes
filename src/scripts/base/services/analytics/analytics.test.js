@@ -67,12 +67,8 @@ describe('Analytics Service', () => {
   });
 
   it('should initialize Inspectlet when it is enabled', () => {
-    analyticsService.init(mockAnalyticsEnvironment({
-      ENABLED: true,
-      BASE_URL: 'http://some.url.com',
-      ID: 123
-    }));
-    expect(inspectletService.init).toHaveBeenCalledWith('http://some.url.com', 123);
+    analyticsService.init(mockAnalyticsEnvironment({ ENABLED: true, ID: 123 }));
+    expect(inspectletService.init).toHaveBeenCalledWith(123);
   });
 
   it('should not initialize Inspectlet when it is not enabled', () => {

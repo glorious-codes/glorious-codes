@@ -9,7 +9,6 @@ export default {
     },
     INSPECTLET: {
       ENABLED: true,
-      BASE_URL: 'https://cdn.inspectlet.com',
       ID: 17112230
     }
   }
