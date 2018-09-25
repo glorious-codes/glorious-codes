@@ -39,7 +39,7 @@ function gtag(){
 
 function configInspectlet(INSPECTLET){
   if(INSPECTLET.ENABLED)
-    inspectletService.init(INSPECTLET.ID);
+    inspectletService.init(INSPECTLET.BASE_URL, INSPECTLET.ID);
 }
 
 export default _public;
