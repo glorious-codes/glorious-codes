@@ -4,7 +4,8 @@ import template from './row.html';
 export default {
   name: 'row',
   props: {
-    verticalCentered: Boolean
+    verticalCentered: Boolean,
+    verticalOffset: String
   },
   data(){
     return {};
@@ -12,7 +13,8 @@ export default {
   computed: {
     classes(){
       return {
-        'row-vertical-centered': this.verticalCentered
+        'row-vertical-centered': this.verticalCentered,
+        [`row-vertical-offset-${this.verticalOffset}`]: !!this.verticalOffset
       };
     }
   },

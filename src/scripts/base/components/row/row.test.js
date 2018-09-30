@@ -20,4 +20,9 @@ describe('Row', () => {
     const wrapper = mountComponent({verticalCentered: true});
     expect(wrapper.classes()).toEqual(['row', 'row-vertical-centered']);
   });
+
+  it('should allow vertical offset option', () => {
+    const wrapper = mountComponent({ verticalOffset: '3' });
+    expect(wrapper.classes().includes('row-vertical-offset-3')).toEqual(true);
+  });
 });
