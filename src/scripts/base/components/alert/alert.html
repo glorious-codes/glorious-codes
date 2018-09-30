@@ -1,0 +1,12 @@
+<div v-if="alert" class="alert" :class="classes">
+  <span class="alert-message">{{ alert.message }}</span>
+  <btn
+    v-if="alert.retryAction"
+    @click="retry"
+    icon-name="ion-loop"
+    theme="danger"
+    size="small"
+    class="alert-retry-btn">
+    Retry
+  </btn>
+</div>

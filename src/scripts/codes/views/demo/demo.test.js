@@ -2,12 +2,12 @@ import { shallowMount } from '@vue/test-utils';
 import viewport from '@scripts/base/components/viewport/viewport';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
 import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
-import cookieDemo from '@scripts/codes/components/cookie-demo/cookie-demo';
-import cookie from './cookie';
+import demoDemo from '@scripts/codes/components/demo-demo/demo-demo';
+import demo from './demo';
 
-describe('Codes Cookie View', () => {
+describe('Codes Crud View', () => {
   function mountComponent(){
-    return shallowMount(cookie);
+    return shallowMount(demo);
   }
 
   it('should contain a viewport', () => {
@@ -29,13 +29,13 @@ describe('Codes Cookie View', () => {
   it('should code view summary contain a heading', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Cookie');
+    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Demo');
   });
 
   it('should code view summary contain an external link', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/rafaelcamargo/glorious-cookie#install');
+    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/rafaelcamargo/glorious-demo#install');
   });
 
   it('should contain a code weight badge', () => {
@@ -46,11 +46,11 @@ describe('Codes Cookie View', () => {
   it('should code weight badge contain a text', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeweightbadge-stub').element;
-    expect(viewSummary.getAttribute('text')).toEqual('1kb Gzipped');
+    expect(viewSummary.getAttribute('text')).toEqual('4.6kb Gzipped');
   });
 
-  it('should contain a cookie demo', () => {
+  it('should contain a demo demo', () => {
     const wrapper = mountComponent();
-    expect(wrapper.contains(cookieDemo)).toEqual(true);
+    expect(wrapper.contains(demoDemo)).toEqual(true);
   });
 });

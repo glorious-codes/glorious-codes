@@ -15,7 +15,7 @@ const head = seoService.buildHead({
 });
 
 export default {
-  name: 'cookie',
+  name: 'crud',
   components: {
     row,
     rowItem,

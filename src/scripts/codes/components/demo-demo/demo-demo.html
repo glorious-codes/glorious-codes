@@ -1,0 +1,35 @@
+<div class="demo-demo">
+  <row>
+    <row-item size="12">
+      <alert :alert="alert" />
+      <textarea
+        v-show="isEditorVisible"
+        v-model="demoCode"
+        class="demo-demo-editor"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false">
+      </textarea>
+      <div
+        v-show="isPreviewerVisible"
+        class="demo-demo-previewer"
+        data-demo-container>
+      </div>
+    </row-item>
+  </row>
+  <row vertical-offset="5" class="demo-demo-button-row">
+    <row-item size="12">
+      <btn
+        v-show="isPreviewerVisible"
+        @click="showEditor()">
+        Edit
+      </btn>
+      <btn
+        v-show="isEditorVisible"
+        @click="preview()">
+        Preview
+      </btn>
+    </row-item>
+  </row>
+</div>

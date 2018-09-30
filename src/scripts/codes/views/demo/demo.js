@@ -1,29 +1,29 @@
-import '@images/cookie-916x460.png';
+import '@images/demo-916x460.png';
 import seoService from '@scripts/base/services/seo/seo';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
 import viewport from '@scripts/base/components/viewport/viewport';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
 import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
-import cookieDemo from '@scripts/codes/components/cookie-demo/cookie-demo';
-import template from './cookie.html';
+import demoDemo from '@scripts/codes/components/demo-demo/demo-demo';
+import template from './demo.html';
 
 const head = seoService.buildHead({
-  title: 'Glorious Cookie',
-  description: 'The tiniest cookies library.',
-  keywords: 'glorious, cookie, browser',
-  imageFilename: 'cookie-916x460.png'
+  title: 'Glorious Demo',
+  description: 'The easiest way to show your code in action.',
+  keywords: 'glorious, demo, demonstration, code',
+  imageFilename: 'demo-916x460.png'
 });
 
 export default {
-  name: 'cookie',
+  name: 'demo',
   components: {
     row,
     rowItem,
     viewport,
     codeViewSummary,
     codeWeightBadge,
-    cookieDemo
+    demoDemo
   },
   head,
   template
