@@ -1,6 +1,7 @@
 import codesHome from '@scripts/codes/views/home/home';
 import codesCookie from '@scripts/codes/views/cookie/cookie';
 import codesCrud from '@scripts/codes/views/crud/crud';
+import codesDemo from '@scripts/codes/views/demo/demo';
 import authorHome from '@scripts/author/views/home/home';
 
 const routes = [
@@ -26,6 +27,14 @@ const routes = [
     component: codesCrud,
     codesMenu: {
       text: 'Glorious Crud'
+    },
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: codesDemo,
+    codesMenu: {
+      text: 'Glorious Demo'
     },
   },
   {

@@ -12,10 +12,6 @@ describe('Demo Preview Service', () => {
     return container;
   }
 
-  function mockDemoCode(){
-    return 'const gdemo = new GDemo("#container");';
-  }
-
   beforeEach(() => {
     document.body.appendChild(createContainerHtmlTag());
   });

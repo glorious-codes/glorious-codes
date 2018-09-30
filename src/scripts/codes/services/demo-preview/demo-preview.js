@@ -9,7 +9,7 @@ _public.build = (demoCode, errorCallback) => {
   clearDemoPreviewContainer();
   removeCurrentDemoCodeScriptTag();
   configGlobalVariables(errorCallback);
-  buildDemoCodeScriptTag(demoCode, errorCallback);
+  buildDemoCodeScriptTag(demoCode);
   deleteGlobalVariables();
 };
 
@@ -41,14 +41,14 @@ function setGlobalVariable(name, variable){
   window[name] = variable;
 }
 
-function buildDemoCodeScriptTag(demoCode, errorCallback){
+function buildDemoCodeScriptTag(demoCode){
   const tag = document.createElement('script');
   tag.setAttribute('data-demo-code','');
-  tag.innerHTML = wrapInsideIIFE(demoCode, errorCallback);
+  tag.innerHTML = wrapInsideIIFE(demoCode);
   document.body.appendChild(tag);
 }
 
-function wrapInsideIIFE(demoCode, errorCallback){
+function wrapInsideIIFE(demoCode){
   return `(function(${getWindowPropsToBlock().join(',')}){
     'use strict';
     try {
