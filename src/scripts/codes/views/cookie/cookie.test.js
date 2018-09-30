@@ -1,6 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
 import viewport from '@scripts/base/components/viewport/viewport';
+import seoService from '@scripts/base/services/seo/seo';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
+import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
 import cookieDemo from '@scripts/codes/components/cookie-demo/cookie-demo';
 import cookie from './cookie';
 
@@ -35,6 +37,17 @@ describe('Codes Cookie View', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
     expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/rafaelcamargo/glorious-cookie#install');
+  });
+
+  it('should contain a code weight badge', () => {
+    const wrapper = mountComponent();
+    expect(wrapper.contains(codeWeightBadge)).toEqual(true);
+  });
+
+  it('should code weight badge contain a text', () => {
+    const wrapper = mountComponent();
+    const viewSummary = wrapper.find('codeweightbadge-stub').element;
+    expect(viewSummary.getAttribute('text')).toEqual('1kb Gzipped');
   });
 
   it('should contain a cookie demo', () => {
