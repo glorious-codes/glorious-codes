@@ -1,3 +1,4 @@
+import '@styles/demo-demo.styl';
 import DEFAULT_DEMO_CODE from '@scripts/codes/constants/demo-demo';
 import alert from '@scripts/base/components/alert/alert';
 import btn from '@scripts/base/components/btn/btn';
