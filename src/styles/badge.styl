@@ -1,0 +1,17 @@
+@require '_variables'
+@require '_mixins'
+
+.badge
+  padding 2px 5px
+  background-color $color-grey-light
+  font-size $font-size-xxs
+  text-transform uppercase
+  border-width 1px
+  border-style solid
+  border-color $color-grey-semi-light
+  border-radius(3px)
+  box-sizing(border-box)
+  &.badge-success
+    background-color $color-green-light
+    color $color-green
+    border-color $color-green-semi-light
