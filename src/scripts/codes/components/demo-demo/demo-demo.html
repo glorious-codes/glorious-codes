@@ -2,15 +2,11 @@
   <row>
     <row-item size="12">
       <alert :alert="alert" />
-      <textarea
+      <editor
         v-show="isEditorVisible"
-        v-model="demoCode"
-        class="demo-demo-editor"
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false">
-      </textarea>
+        :code="demoCode"
+        :on-code-change="onEditorCodeChange"
+        language="js" />
       <div
         v-show="isPreviewerVisible"
         class="demo-demo-previewer"

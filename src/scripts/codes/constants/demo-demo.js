@@ -1,5 +1,4 @@
-export default `
-const gdemo = new GDemo('[data-demo-container]');
+export default `const gdemo = new GDemo('[data-demo-container]');
 
 const code = 'console.log("Hello World!");'
 
