@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@glorious/demo": "^0.7.0",
+    "codeflask": "^1.2.1",
     "ionicons": "^2.0.1",
     "prismjs": "^1.15.0",
+    "shortid": "^2.2.13",
     "vue": "^2.5.11",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1"

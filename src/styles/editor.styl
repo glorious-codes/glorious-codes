@@ -1,0 +1,27 @@
+@require '_variables'
+@require '_mixins'
+
+.editor
+  position relative
+  height 400px
+  background-color $color-grey-light
+  border 1px solid $color-grey
+  border-radius(3px)
+  .codeflask
+    background transparent
+  .token
+    &.class-name
+      color $color-blue
+    &.constant
+      color $color-blue
+    &.property
+      color $color-blue
+    &.symbol
+      color $color-blue
+  pre
+    padding 10px
+  code[class*=language-],
+  pre[class*=language-]
+    background none
+    color inherit
+    line-height 20px
