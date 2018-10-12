@@ -2,6 +2,7 @@ import '@styles/demo-demo.styl';
 import DEFAULT_DEMO_CODE from '@scripts/codes/constants/demo-demo';
 import alert from '@scripts/base/components/alert/alert';
 import btn from '@scripts/base/components/btn/btn';
+import editor from '@scripts/base/components/editor/editor';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
 import demoPreviewService from '@scripts/codes/services/demo-preview/demo-preview';
@@ -12,19 +13,22 @@ export default {
   components: {
     alert,
     btn,
+    editor,
     row,
     rowItem
   },
   data(){
     return {
       alert: null,
-      demoCode: '',
+      demoCode: null,
       isEditorVisible: null,
       isPreviewerVisible: null
     };
   },
-  mounted(){
+  created(){
     this.setDemoCode(DEFAULT_DEMO_CODE);
+  },
+  mounted(){
     this.preview();
   },
   methods: {
@@ -59,6 +63,9 @@ export default {
         this.demoCode,
         this.onDemoCodeCompilationError
       );
+    },
+    onEditorCodeChange(code){
+      this.setDemoCode(code);
     }
   },
   template

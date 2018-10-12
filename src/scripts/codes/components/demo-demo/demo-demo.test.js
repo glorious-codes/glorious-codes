@@ -71,4 +71,11 @@ describe('Demo Demo', () => {
     wrapper.vm.showEditor();
     expect(wrapper.vm.alert).toEqual(null);
   });
+
+  it('should set demo code on editor code change', () => {
+    const code = 'const test = true;';
+    const wrapper = mountComponent();
+    wrapper.vm.onEditorCodeChange(code);
+    expect(wrapper.vm.demoCode).toEqual(code);
+  });
 });
