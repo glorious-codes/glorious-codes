@@ -1,0 +1,16 @@
+@require '_variables'
+@require '_mixins'
+
+.toggle-btn-group
+  .btn
+    +highlight()
+      background transparent
+      color $color-grey-dark
+    &.toggle-btn-pressed
+      cursor default
+      pointer-events none
+    &.btn-small
+      height 27px
+      &.toggle-btn-pressed
+        padding-top 1px
+        box-shadow(inset 0 1px 3px 0 $color-grey)
