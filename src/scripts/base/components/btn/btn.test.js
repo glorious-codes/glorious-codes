@@ -38,5 +38,4 @@ describe('Btn', () => {
     const wrapper = createComponent({}, {default: `<p>${content}</p>`});
     expect(wrapper.find('p').text()).toContain(content);
   });
-
 });

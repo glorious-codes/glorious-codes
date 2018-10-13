@@ -2,6 +2,7 @@ import '@styles/demo-demo.styl';
 import DEFAULT_DEMO_CODE from '@scripts/codes/constants/demo-demo';
 import alert from '@scripts/base/components/alert/alert';
 import btn from '@scripts/base/components/btn/btn';
+import toggleBtnGroup from '@scripts/base/components/toggle-btn-group/toggle-btn-group';
 import editor from '@scripts/base/components/editor/editor';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
@@ -13,6 +14,7 @@ export default {
   components: {
     alert,
     btn,
+    toggleBtnGroup,
     editor,
     row,
     rowItem
