@@ -14,8 +14,8 @@
       </div>
     </row-item>
   </row>
-  <row vertical-offset="5" class="demo-demo-button-row">
-    <row-item size="12">
+  <div class="demo-demo-toolbar">
+    <div class="demo-demo-toolbar-toggle-buttons">
       <toggle-btn-group>
         <btn
           @click="showEditor()"
@@ -31,6 +31,17 @@
           Preview
         </btn>
       </toggle-btn-group>
-    </row-item>
-  </row>
+    </div>
+    <div class="demo-demo-toolbar-share-buttons">
+      <btn-group>
+        <copy-btn
+          size="small"
+          icon-name="ion-link"
+          :copy-text="demoLink">
+          Copy Demo Link
+        </copy-btn>
+        <tweet-btn :tweet="tweet" size="small" />
+      </btn-group>
+    </div>
+  </div>
 </div>

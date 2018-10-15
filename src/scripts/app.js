@@ -20,7 +20,7 @@ const router = new VueRouter({
   mode: 'history'
 });
 
-routeService.init(router);
+routeService.setRouter(router);
 analyticsService.init(ENV.ANALYTICS);
 
 const app = {

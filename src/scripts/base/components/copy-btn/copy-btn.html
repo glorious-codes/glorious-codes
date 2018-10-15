@@ -1,0 +1,16 @@
+<span class="copy-btn">
+  <btn :data-clipboard-text="copyText" :size="size">
+    <span class="copy-btn-feedback" v-if="isFeedbackVisible">
+      <icon :name="feedback.iconName" />
+      <span class="copy-btn-feedback-text">
+        {{ feedback.text }}
+      </span>
+    </span>
+    <span class="copy-btn-content" v-if="!isFeedbackVisible">
+      <icon :name="iconName" />
+      <span class="copy-btn-text">
+        <slot></slot>
+      </span>
+    </span>
+  </btn>
+</span>
