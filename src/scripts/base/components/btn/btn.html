@@ -1,4 +1,6 @@
 <button class="btn" :class="classes" v-on="$listeners">
   <icon v-if="iconName" :name="iconName"></icon>
-  <slot></slot>
+  <span class="btn-text">
+    <slot></slot>
+  </span>
 </button>
