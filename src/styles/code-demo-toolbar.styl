@@ -1,0 +1,28 @@
+@require '_mixins'
+
+.code-demo-toolbar
+  margin-top 50px
+  clearfix()
+  .btn
+    min-width 100px
+
+.code-demo-toolbar-left,
+.code-demo-toolbar-right
+  float left
+  width 50%
+
+.code-demo-toolbar-right
+  text-align right
+
++breakpoint('xs')
+  .code-demo-toolbar
+    .btn
+      min-width 50px
+    .btn-text
+      display none
+    .copy-btn
+      .btn-text
+        display inline-block
+      .copy-btn-feedback-text,
+      .copy-btn-text
+        display none
