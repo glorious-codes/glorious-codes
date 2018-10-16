@@ -1,45 +1,12 @@
-@require '_variables'
 @require '_mixins'
 
 .demo-demo
   margin 0 auto
   max-width 550px
-  .btn
-    min-width 100px
 
 .demo-demo-previewer
   height 400px
 
-.demo-demo-toolbar
-  margin-top 50px
-  clearfix()
-
-.demo-demo-toolbar-toggle-buttons,
-.demo-demo-toolbar-share-buttons
-  float left
-  width 50%
-
-.demo-demo-toolbar-share-buttons
-  text-align right
-  .copy-btn
-    .btn
-      border-right 0
-      border-radius(22px 0 0 22px)
-  .tweet-btn
-    .btn
-      border-radius(0 22px 22px 0)
-
 +breakpoint('xs')
   .demo-demo
     margin 60px 0
-  .demo-demo-toolbar
-    .btn
-      min-width 50px
-    .btn-text
-      display none
-    .copy-btn
-      .btn-text
-        display inline-block
-      .copy-btn-feedback-text,
-      .copy-btn-text
-        display none
