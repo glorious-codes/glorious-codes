@@ -1,3 +1,4 @@
+@require '_variables'
 @require '_mixins'
 
 .code-demo-toolbar
@@ -5,6 +6,10 @@
   clearfix()
   .btn
     min-width 100px
+  p
+    font-size $font-size-xs
+    line-height 27px
+    white-space nowrap
 
 .code-demo-toolbar-left,
 .code-demo-toolbar-right
