@@ -8,7 +8,7 @@ export default {
       BASE_URL: 'https://www.googletagmanager.com/gtag/js'
     },
     INSPECTLET: {
-      ENABLED: true,
+      ENABLED: false,
       ID: 17112230
     }
   }
