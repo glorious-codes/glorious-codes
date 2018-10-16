@@ -1,6 +1,5 @@
 import '@styles/demo-demo.styl';
 import ENV from '@environment';
-import DEFAULT_DEMO_CODE from '@scripts/codes/constants/demo-demo';
 import alert from '@scripts/base/components/alert/alert';
 import btn from '@scripts/base/components/btn/btn';
 import btnGroup from '@scripts/base/components/btn-group/btn-group';
@@ -10,7 +9,8 @@ import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
 import toggleBtnGroup from '@scripts/base/components/toggle-btn-group/toggle-btn-group';
 import tweetBtn from '@scripts/base/components/tweet-btn/tweet-btn';
-import routeService from '@scripts/base/services/route/route';
+import codeDemoToolbar from '@scripts/codes/components/code-demo-toolbar/code-demo-toolbar';
+import demoDemoInitialCodeService from '@scripts/codes/services/demo-demo-initial-code/demo-demo-initial-code';
 import demoPreviewService from '@scripts/codes/services/demo-preview/demo-preview';
 import template from './demo-demo.html';
 
@@ -25,7 +25,8 @@ export default {
     row,
     rowItem,
     toggleBtnGroup,
-    tweetBtn
+    tweetBtn,
+    codeDemoToolbar
   },
   data(){
     return {
@@ -38,22 +39,14 @@ export default {
     };
   },
   created(){
-    this.updateDemoCode(this.getInitialDemoCode());
+    this.updateDemoCode(demoDemoInitialCodeService.get());
   },
   mounted(){
     this.preview();
   },
   methods: {
-    getInitialDemoCode(){
-      const demo = routeService.getQueryParams('demo');
-      return demo ? window.atob(demo) : DEFAULT_DEMO_CODE;
-    },
     setDemoCode(code){
       this.demoCode = code;
-    },
-    buildDemoLink(demoCode){
-      const link = `${ENV.APP.BASE_URL}/demo?demo=${window.btoa(demoCode)}`;
-      this.setDemoLink(link);
     },
     setDemoLink(link){
       this.demoLink = link;
@@ -92,7 +85,7 @@ export default {
     },
     updateDemoCode(code){
       this.setDemoCode(code);
-      this.buildDemoLink(this.demoCode);
+      this.setDemoLink(demoDemoInitialCodeService.buildParameterizedUrl(code));
     }
   },
   template

@@ -14,34 +14,34 @@
       </div>
     </row-item>
   </row>
-  <div class="demo-demo-toolbar">
-    <div class="demo-demo-toolbar-toggle-buttons">
-      <toggle-btn-group>
-        <btn
-          @click="showEditor()"
-          size="small"
-          icon-name="ion-edit">
-          Edit
-        </btn>
-        <btn
-          @click="preview()"
-          size="small"
-          icon-name="ion-film-marker"
-          pressed>
-          Preview
-        </btn>
-      </toggle-btn-group>
-    </div>
-    <div class="demo-demo-toolbar-share-buttons">
-      <btn-group>
-        <copy-btn
-          size="small"
-          icon-name="ion-link"
-          :copy-text="demoLink">
-          Copy Demo Link
-        </copy-btn>
-        <tweet-btn :tweet="tweet" size="small" />
-      </btn-group>
-    </div>
-  </div>
+  <row>
+    <row-item size="12">
+      <code-demo-toolbar>
+        <toggle-btn-group slot="left">
+          <btn
+            @click="showEditor()"
+            size="small"
+            icon-name="ion-edit">
+            Edit
+          </btn>
+          <btn
+            @click="preview()"
+            size="small"
+            icon-name="ion-film-marker"
+            pressed>
+            Preview
+          </btn>
+        </toggle-btn-group>
+        <btn-group slot="right">
+          <copy-btn
+            size="small"
+            icon-name="ion-link"
+            :copy-text="demoLink">
+            Copy Demo Link
+          </copy-btn>
+          <tweet-btn :tweet="tweet" size="small" />
+        </btn-group>
+      </code-demo-toolbar>
+    </row-item>
+  </row>
 </div>

@@ -1,6 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import DEFAULT_DEMO_CODE from '@scripts/codes/constants/demo-demo';
-import routeService from '@scripts/base/services/route/route';
+import demoDemoInitialCodeService from '@scripts/codes/services/demo-demo-initial-code/demo-demo-initial-code';
 import demoPreviewService from '@scripts/codes/services/demo-preview/demo-preview';
 import demoDemo from './demo-demo';
 
@@ -9,13 +8,10 @@ describe('Demo Demo', () => {
     return shallowMount(demoDemo);
   }
 
-  function stubGetQueryParams(paramValue){
-    routeService.getQueryParams = jest.fn(() => paramValue);
-  }
-
   beforeEach(() => {
+    demoDemoInitialCodeService.get = jest.fn(() => 'console.log(test);');
+    demoDemoInitialCodeService.buildParameterizedUrl = jest.fn(() => 'http://test.com');
     demoPreviewService.build = jest.fn();
-    stubGetQueryParams();
   });
 
   it('should have appropriate css classes', () => {
@@ -29,20 +25,10 @@ describe('Demo Demo', () => {
     expect(container.getAttribute('data-demo-container')).toBeDefined();
   });
 
-  it('should build default demo preview on mount with default demo code', () =>{
+  it('should build demo preview with initial demo code on mount', () =>{
     const wrapper = mountComponent();
     expect(demoPreviewService.build).toHaveBeenCalledWith(
-      DEFAULT_DEMO_CODE,
-      wrapper.vm.onDemoCodeCompilationError
-    );
-  });
-
-  it('should build default demo preview on mount with demo code query param', () =>{
-    const queryParamValue = 'const test = true;';
-    stubGetQueryParams(window.btoa(queryParamValue));
-    const wrapper = mountComponent();
-    expect(demoPreviewService.build).toHaveBeenCalledWith(
-      queryParamValue,
+      'console.log(test);',
       wrapper.vm.onDemoCodeCompilationError
     );
   });
@@ -54,12 +40,11 @@ describe('Demo Demo', () => {
   });
 
   it('should build demo link on mount', () => {
-    const queryParamValue = 'const test = true;';
-    stubGetQueryParams(window.btoa(queryParamValue));
     const wrapper = mountComponent();
-    expect(wrapper.vm.demoLink).toEqual(
-      `http://localhost:7000/demo?demo=${window.btoa(queryParamValue)}`
+    expect(demoDemoInitialCodeService.buildParameterizedUrl).toHaveBeenCalledWith(
+      'console.log(test);'
     );
+    expect(wrapper.vm.demoLink).toEqual('http://test.com');
   });
 
   it('should allow editing demo code', () => {
@@ -108,8 +93,9 @@ describe('Demo Demo', () => {
     const code = 'const test = true;';
     const wrapper = mountComponent();
     wrapper.vm.onEditorCodeChange(code);
-    expect(wrapper.vm.demoLink).toEqual(
-      `http://localhost:7000/demo?demo=${window.btoa(code)}`
+    expect(demoDemoInitialCodeService.buildParameterizedUrl).toHaveBeenCalledWith(
+      code
     );
+    expect(wrapper.vm.demoLink).toEqual('http://test.com');
   });
 });
