@@ -34,7 +34,7 @@ describe('Codes Crud View', () => {
   it('should code view summary contain an external link', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/rafaelcamargo/glorious-crud#installation');
+    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/glorious-codes/glorious-crud#installation');
   });
 
   it('should contain a crud demo', () => {

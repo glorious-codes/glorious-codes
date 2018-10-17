@@ -35,7 +35,7 @@ describe('Codes Crud View', () => {
   it('should code view summary contain an external link', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/rafaelcamargo/glorious-demo#install');
+    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/glorious-codes/glorious-demo#install');
   });
 
   it('should contain a code weight badge', () => {
