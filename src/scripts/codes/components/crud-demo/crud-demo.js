@@ -34,7 +34,7 @@ export default {
       const gdemo = new GDemo('[data-crud-demo-container]');
       const code = `
 import express from 'express';
-import GCrud from 'gcrud';
+import GCrud from '@glorious/crud';
 
 const app = express();
 const gCrud = new GCrud(
