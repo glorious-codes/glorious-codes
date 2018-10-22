@@ -54,7 +54,7 @@ function wrapInsideIIFE(demoCode){
     try {
       ${demoCode}
     } catch(err) {
-      compilationErrorHandler(err);
+      compilationErrorHandler && compilationErrorHandler(err);
     }
   }());`;
 }
