@@ -1,9 +1,18 @@
 <div class="code-view-summary">
   <view-summary :heading="heading" :hero-heading="heroHeading">
-    <slot></slot>
+    <p>
+      {{ tagline }}
+      <br>
+      <code-weight-badge
+        v-if="codeWeightBadgeText"
+        :text="codeWeightBadgeText" />
+      <github-button-widget
+        username="glorious-codes"
+        :repository-name="repositoryName" />
+    </p>
     <list>
       <list-item>
-        <external-link :href="externalLinkHref">
+        <external-link :href="documentationLink">
           See documentation
         </external-link>
       </list-item>

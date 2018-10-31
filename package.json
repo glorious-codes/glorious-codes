@@ -17,6 +17,7 @@
     "prismjs": "^1.15.0",
     "shortid": "^2.2.13",
     "vue": "^2.5.11",
+    "vue-github-buttons": "^2.1.1",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1"
   },

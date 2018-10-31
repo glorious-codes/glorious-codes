@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import viewport from '@scripts/base/components/viewport/viewport';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
-import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
 import demoDemo from '@scripts/codes/components/demo-demo/demo-demo';
 import demo from './demo';
 
@@ -32,21 +31,24 @@ describe('Codes Crud View', () => {
     expect(viewSummary.getAttribute('heading')).toEqual('Glorious Demo');
   });
 
-  it('should code view summary contain an external link', () => {
+  it('should code view summary contain a repository name', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/glorious-codes/glorious-demo#install');
+    expect(viewSummary.getAttribute('repositoryname')).toEqual('glorious-demo');
   });
 
-  it('should contain a code weight badge', () => {
+  it('should code view summary contain a code weight', () => {
     const wrapper = mountComponent();
-    expect(wrapper.contains(codeWeightBadge)).toEqual(true);
+    const viewSummary = wrapper.find('codeviewsummary-stub').element;
+    expect(viewSummary.getAttribute('codeweight')).toEqual('4.6');
   });
 
-  it('should code weight badge contain a text', () => {
+  it('should code view summary contain a tagline', () => {
     const wrapper = mountComponent();
-    const viewSummary = wrapper.find('codeweightbadge-stub').element;
-    expect(viewSummary.getAttribute('text')).toEqual('4.6kb Gzipped');
+    const viewSummary = wrapper.find('codeviewsummary-stub').element;
+    expect(viewSummary.getAttribute('tagline')).toEqual(
+      'The easiest way of creating animations to show your code in action.'
+    );
   });
 
   it('should contain a demo demo', () => {
