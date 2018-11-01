@@ -31,10 +31,10 @@ describe('Codes Crud View', () => {
     expect(viewSummary.getAttribute('heading')).toEqual('Glorious Crud');
   });
 
-  it('should code view summary contain an external link', () => {
+  it('should code view summary contain a respository name', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('externallinkhref')).toEqual('https://github.com/glorious-codes/glorious-crud#installation');
+    expect(viewSummary.getAttribute('repositoryname')).toEqual('glorious-crud');
   });
 
   it('should contain a crud demo', () => {
