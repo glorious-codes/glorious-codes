@@ -3,6 +3,7 @@ import list from '@scripts/base/components/list/list';
 import listItem from '@scripts/base/components/list-item/list-item';
 import viewSummary from '@scripts/base/components/view-summary/view-summary';
 import codesBackLink from '@scripts/codes/components/codes-back-link/codes-back-link';
+import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
 import codeViewSummary from './code-view-summary';
 
 describe('Code View Summary', () => {
@@ -70,8 +71,18 @@ describe('Code View Summary', () => {
     expect(externalLink.innerHTML.trim()).toEqual('See documentation');
   });
 
-  it('should set code weight badge text', () => {
+  it('should show code weight badge if code weight has been passed', () => {
+    const wrapper = mountComponent({ codeWeight: '4.6' });
+    expect(wrapper.contains(codeWeightBadge)).toEqual(true);
+  });
+
+  it('should set code weight badge text if code weight has been passed', () => {
     const wrapper = mountComponent({ codeWeight: '4.6' });
     expect(wrapper.vm.codeWeightBadgeText).toEqual('4.6kb Gzipped');
+  });
+
+  it('should not show code weight badge if no code weight has been passed', () => {
+    const wrapper = mountComponent();
+    expect(wrapper.contains(codeWeightBadge)).toEqual(false);
   });
 });
