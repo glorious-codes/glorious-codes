@@ -23,7 +23,7 @@ cd glorious-codes
 npm install
 ```
 
-5. If you want just build the project, run:
+5. If you want to just build the project, run:
 ``` bash
 npm run build
 ```
