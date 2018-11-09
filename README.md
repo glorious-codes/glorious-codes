@@ -23,7 +23,7 @@ cd glorious-codes
 npm install
 ```
 
-5. If you want just build the project, run:
+5. If you want to just build the project, run:
 ``` bash
 npm run build
 ```
@@ -33,7 +33,7 @@ npm run build
 npm run start
 ```
 
-The app will be running on `http://localhost:7000` and the browser will automatically reload with the changes you make in any source file.
+The app runs on `http://localhost:7000`. The browser automatically reloads for any source file changes.
 
 ## Tests
 
