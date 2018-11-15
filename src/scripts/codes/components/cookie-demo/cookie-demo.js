@@ -37,7 +37,7 @@ import gcookie from '@glorious/cookie';
 gcookie.set('username', 'Rafael');
 
 const cookies = gcookie.get();
-console.log(cookie); // { username: 'Rafael' }
+console.log(cookies); // { username: 'Rafael' }
 
 gcookie.remove('username');
 `;
