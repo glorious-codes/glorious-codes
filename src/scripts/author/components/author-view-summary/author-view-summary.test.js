@@ -48,11 +48,18 @@ describe('Author View Summary', () => {
     expect(projectLinks.at(3).attributes('href')).toEqual(link);
   });
 
+  it('should contain link for TUM project', () => {
+    const link = 'https://theunseriousmanifest.org/?utm_source=glorious-codes&utm_medium=author';
+    const wrapper = mountComponent();
+    const projectLinks = wrapper.findAll('a');
+    expect(projectLinks.at(4).attributes('href')).toEqual(link);
+  });
+
   it('should contain link for sending an email', () => {
     const link = 'mailto:hello@rafaelcamargo.com';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(4).attributes('href')).toEqual(link);
+    expect(projectLinks.at(5).attributes('href')).toEqual(link);
   });
 
   it('should contain a view summary', () => {
