@@ -18,10 +18,25 @@ describe('Demo Demo Initial Code Service', () => {
     expect(demoDemoInitialCodeService.get()).toEqual(code);
   });
 
+  it('should decode braces when getting custom demo demo initial code', () => {
+    const urlParamValue = window.btoa('function greet()%OPBR% console.log("Hello"); %CLBR% greet();');
+    const code = 'function greet(){ console.log("Hello"); } greet();';
+    stubGetQueryParams(urlParamValue);
+    expect(demoDemoInitialCodeService.get()).toEqual(code);
+  });
+
   it('should build custom demo demo initial code url', () => {
     const code = 'const test = true;';
     expect(demoDemoInitialCodeService.buildParameterizedUrl(code)).toEqual(
       'http://localhost:7000/demo?demo=Y29uc3QgdGVzdCA9IHRydWU7'
+    );
+  });
+
+  it('should encode braces when building demo demo initial code url', () => {
+    const urlParamValue = window.btoa('function greet()%OPBR% console.log("Hello"); %CLBR% greet();');
+    const code = 'function greet(){ console.log("Hello"); } greet();';
+    expect(demoDemoInitialCodeService.buildParameterizedUrl(code)).toEqual(
+      `http://localhost:7000/demo?demo=${urlParamValue}`
     );
   });
 });
