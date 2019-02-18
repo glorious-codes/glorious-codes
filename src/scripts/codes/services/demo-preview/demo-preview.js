@@ -56,7 +56,7 @@ function wrapInsideIIFE(demoCode){
     } catch(err) {
       compilationErrorHandler && compilationErrorHandler(err);
     }
-  }(GDemo, Prism, compilationErrorHandler));`;
+  }(window.GDemo, window.Prism, window.compilationErrorHandler));`;
 }
 
 function getWindowPropsToBlock(){
