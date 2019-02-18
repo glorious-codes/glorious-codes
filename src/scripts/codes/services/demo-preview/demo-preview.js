@@ -49,14 +49,14 @@ function buildDemoCodeScriptTag(demoCode){
 }
 
 function wrapInsideIIFE(demoCode){
-  return `(function(${getWindowPropsToBlock().join(',')}){
+  return `(function(GDemo, Prism, compilationErrorHandler, ${getWindowPropsToBlock().join(',')}){
     'use strict';
     try {
       ${demoCode}
     } catch(err) {
       compilationErrorHandler && compilationErrorHandler(err);
     }
-  }());`;
+  }(GDemo, Prism, compilationErrorHandler));`;
 }
 
 function getWindowPropsToBlock(){
