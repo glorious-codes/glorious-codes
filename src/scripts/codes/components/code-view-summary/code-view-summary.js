@@ -40,6 +40,7 @@ export default {
     this.setRepositorySlug(this.buildRepositorySlug(this.repositoryName));
     this.setDocumentationLink(this.buildDocumentationLink(this.repositoryName));
     this.setCodeWeightBadgeText(this.buildCodeWeightBadgeText(this.codeWeight));
+    this.handleCustomContentCssClass();
   },
   methods: {
     buildRepositorySlug(repositoryName){
@@ -59,6 +60,11 @@ export default {
     },
     setCodeWeightBadgeText(text){
       this.codeWeightBadgeText = text;
+    },
+    handleCustomContentCssClass(){
+      const container = this.$el.querySelector('[data-code-view-summary-custom-content]');
+      if(container.children.length)
+        container.classList.add('code-view-summary-custom-content');
     }
   },
   template
