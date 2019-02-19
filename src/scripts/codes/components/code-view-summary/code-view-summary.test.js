@@ -7,9 +7,10 @@ import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-we
 import codeViewSummary from './code-view-summary';
 
 describe('Code View Summary', () => {
-  function mountComponent(propsData){
+  function mountComponent(propsData, slots){
     return shallowMount(codeViewSummary, {
       propsData,
+      slots,
       stubs: ['gh-btns-star']
     });
   }
@@ -84,5 +85,16 @@ describe('Code View Summary', () => {
   it('should not show code weight badge if no code weight has been passed', () => {
     const wrapper = mountComponent();
     expect(wrapper.contains(codeWeightBadge)).toEqual(false);
+  });
+
+  it('should transclude some content', () => {
+    const wrapper = mountComponent(null, { default: '<span>Custom</span>' });
+    expect(wrapper.find('span').text()).toEqual('Custom');
+  });
+
+  it('should add custom content css class if some content has been transcluded', () => {
+    const wrapper = mountComponent(null, { default: '<span>Custom</span>' });
+    const customContentContainer = wrapper.vm.$el.querySelector('[data-code-view-summary-custom-content]');
+    expect(customContentContainer.classList.contains('code-view-summary-custom-content')).toEqual(true);
   });
 });
