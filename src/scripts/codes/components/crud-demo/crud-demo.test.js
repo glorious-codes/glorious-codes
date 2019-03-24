@@ -10,8 +10,8 @@ GDemo.mockImplementation(GDemoMock);
 
 function buildExpectedHighlightedCode(){
   const code = `
-import express from 'express';
-import GCrud from '@glorious/crud';
+const express = require('express');
+const GCrud = require('@glorious/crud');
 
 const app = express();
 const gCrud = new GCrud(
