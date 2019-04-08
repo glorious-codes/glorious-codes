@@ -27,39 +27,46 @@ describe('Author View Summary', () => {
     expect(projectLinks.at(0).attributes('href')).toEqual(link);
   });
 
+  it('should contain link for Hiphunt project', () => {
+    const link = 'https://hiphunt.com/?utm_source=glorious-codes&utm_medium=author';
+    const wrapper = mountComponent();
+    const projectLinks = wrapper.findAll('a');
+    expect(projectLinks.at(1).attributes('href')).toEqual(link);
+  });
+
   it('should contain link for Nashios project', () => {
     const link = 'https://www.nashios.com/?utm_source=glorious-codes&utm_medium=author';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(1).attributes('href')).toEqual(link);
+    expect(projectLinks.at(2).attributes('href')).toEqual(link);
   });
 
   it('should contain link for Teleflik project', () => {
     const link = 'http://teleflik.com/?utm_source=glorious-codes&utm_medium=author';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(2).attributes('href')).toEqual(link);
+    expect(projectLinks.at(3).attributes('href')).toEqual(link);
   });
 
   it('should contain link for Dollert project', () => {
     const link = 'https://chrome.google.com/webstore/detail/dollert/lkbhlmhaiggihoihajncjlnmbpigbkam';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(3).attributes('href')).toEqual(link);
+    expect(projectLinks.at(4).attributes('href')).toEqual(link);
   });
 
   it('should contain link for TUM project', () => {
     const link = 'https://theunseriousmanifest.org/?utm_source=glorious-codes&utm_medium=author';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(4).attributes('href')).toEqual(link);
+    expect(projectLinks.at(5).attributes('href')).toEqual(link);
   });
 
   it('should contain link for sending an email', () => {
     const link = 'mailto:hello@rafaelcamargo.com';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
-    expect(projectLinks.at(5).attributes('href')).toEqual(link);
+    expect(projectLinks.at(6).attributes('href')).toEqual(link);
   });
 
   it('should contain a view summary', () => {
