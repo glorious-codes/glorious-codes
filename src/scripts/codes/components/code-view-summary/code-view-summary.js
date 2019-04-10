@@ -1,4 +1,5 @@
 import '@styles/code-view-summary.styl';
+import adBanner from '@scripts/base/components/ad-banner/ad-banner';
 import list from '@scripts/base/components/list/list';
 import listItem from '@scripts/base/components/list-item/list-item';
 import externalLink from '@scripts/base/components/external-link/external-link';
@@ -21,6 +22,7 @@ export default {
     tagline: String
   },
   components: {
+    adBanner,
     codesBackLink,
     githubButtonWidget,
     codeWeightBadge,
