@@ -1,0 +1,25 @@
+@require '_variables'
+@require '_mixins'
+
+.ad-banner
+  position relative
+  display block
+  padding 5px 30px 5px 5px
+  background-color $color-yellow-light
+  color $color-yellow-dark
+  font-size $font-size-xs
+  border 1px solid $color-yellow
+  border-radius(3px)
+  transition(all, 300ms)
+  +highlight()
+    padding 5px 30px 5px 10px
+    color $color-yellow-dark
+    border 1px solid $color-yellow-dark
+    .icon
+      color $color-yellow-dark
+  .icon
+    position absolute
+    top 50%
+    right 10px
+    color $color-yellow
+    transform('translateY(-50%)')
