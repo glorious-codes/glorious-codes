@@ -4,7 +4,7 @@ import codeViewSummary from '@scripts/codes/components/code-view-summary/code-vi
 import crudDemo from '@scripts/codes/components/crud-demo/crud-demo';
 import crud from './crud';
 
-describe('Codes Crud View', () => {
+describe('Crud View', () => {
   function mountComponent(){
     return shallowMount(crud);
   }

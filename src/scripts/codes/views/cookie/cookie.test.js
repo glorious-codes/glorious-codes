@@ -4,7 +4,7 @@ import codeViewSummary from '@scripts/codes/components/code-view-summary/code-vi
 import cookieDemo from '@scripts/codes/components/cookie-demo/cookie-demo';
 import cookie from './cookie';
 
-describe('Codes Cookie View', () => {
+describe('Cookie View', () => {
   function mountComponent(){
     return shallowMount(cookie);
   }

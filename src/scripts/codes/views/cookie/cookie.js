@@ -12,7 +12,8 @@ const head = seoService.buildHead({
   title: 'Glorious Cookie',
   description: 'The tiniest cookies library.',
   keywords: 'glorious, cookie, browser',
-  imageFilename: 'cookie-916x460.png'
+  imageFilename: 'cookie-916x460.png',
+  imageSize: 'large'
 });
 
 export default {

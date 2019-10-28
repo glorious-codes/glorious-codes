@@ -11,7 +11,8 @@ const head = seoService.buildHead({
   title: 'Glorious Crud',
   description: 'A bare minimum and extensible crud generator.',
   keywords: 'glorious, crud, bare minimum, extensible',
-  imageFilename: 'crud-916x460.png'
+  imageFilename: 'crud-916x460.png',
+  imageSize: 'large'
 });
 
 export default {
