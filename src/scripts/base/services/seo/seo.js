@@ -2,7 +2,7 @@ import ENV from '@environment';
 
 const _public = {};
 
-_public.buildHead = ({ title, description, keywords, imageFilename }) => {
+_public.buildHead = ({ title, description, keywords, imageFilename, imageSize }) => {
   const desc = Array.isArray(description) ? description.join(' ') : description;
   const imageUrl = `${ENV.APP.BASE_URL}/images/${imageFilename}`;
   return {
@@ -14,7 +14,7 @@ _public.buildHead = ({ title, description, keywords, imageFilename }) => {
       { name: 'description', content: desc, id: 'desc' },
       { name: 'keywords', content: keywords },
       // Twitter
-      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:card', content: buildTwitterCardSize(imageSize) },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: desc },
       { name: 'twitter:site', content: '@gloriouscodes' },
@@ -28,5 +28,9 @@ _public.buildHead = ({ title, description, keywords, imageFilename }) => {
     ]
   };
 };
+
+function buildTwitterCardSize(imageSize){
+  return imageSize == 'large' ? 'summary_large_image' : 'summary';
+}
 
 export default _public;

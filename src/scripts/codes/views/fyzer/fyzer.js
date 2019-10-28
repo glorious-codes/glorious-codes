@@ -1,30 +1,29 @@
-import '@images/cookie-916x460.png';
+import '@images/fyzer-200x200.png';
 import seoService from '@scripts/base/services/seo/seo';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
 import viewport from '@scripts/base/components/viewport/viewport';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
 import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
-import cookieDemo from '@scripts/codes/components/cookie-demo/cookie-demo';
-import template from './cookie.html';
+import fyzerDemo from '@scripts/codes/components/fyzer-demo/fyzer-demo';
+import template from './fyzer.html';
 
 const head = seoService.buildHead({
-  title: 'Glorious Cookie',
-  description: 'The tiniest cookies library.',
-  keywords: 'glorious, cookie, browser',
-  imageFilename: 'cookie-916x460.png',
-  imageSize: 'large'
+  title: 'Glorious Fyzer',
+  description: 'The tiniest fyzers library.',
+  keywords: 'glorious, fyzer, page fold',
+  imageFilename: 'fyzer-200x200.png'
 });
 
 export default {
-  name: 'cookie',
+  name: 'fyzer',
   components: {
     row,
     rowItem,
     viewport,
     codeViewSummary,
     codeWeightBadge,
-    cookieDemo
+    fyzerDemo
   },
   head,
   template

@@ -4,7 +4,7 @@ import codeViewSummary from '@scripts/codes/components/code-view-summary/code-vi
 import demoDemo from '@scripts/codes/components/demo-demo/demo-demo';
 import demo from './demo';
 
-describe('Codes Crud View', () => {
+describe('Demo View', () => {
   function mountComponent(){
     return shallowMount(demo);
   }

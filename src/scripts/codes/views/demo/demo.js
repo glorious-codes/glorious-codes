@@ -11,7 +11,8 @@ const head = seoService.buildHead({
   title: 'Glorious Demo',
   description: 'The easiest way to show your code in action.',
   keywords: 'glorious, demo, demonstration, code',
-  imageFilename: 'demo-916x460.png'
+  imageFilename: 'demo-916x460.png',
+  imageSize: 'large'
 });
 
 export default {

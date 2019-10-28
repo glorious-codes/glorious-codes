@@ -17,7 +17,7 @@ describe('SEO Service', () => {
         { name: 'application-name', content: '' },
         { name: 'description', content: 'Description', id: 'desc' },
         { name: 'keywords', content: 'Keywords' },
-        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:title', content: 'Title' },
         { name: 'twitter:description', content: 'Description' },
         { name: 'twitter:site', content: '@gloriouscodes' },
@@ -28,5 +28,15 @@ describe('SEO Service', () => {
         { property: 'og:image', content: 'http://localhost:7000/images/test.png' }
       ]
     });
+  });
+
+  it('should set a regular twitter card by default', () => {
+    const data = seoService.buildHead({});
+    expect(data.meta[3].content).toEqual('summary');
+  });
+
+  it('should optionally set a large twitter card', () => {
+    const data = seoService.buildHead({ imageSize: 'large' });
+    expect(data.meta[3].content).toEqual('summary_large_image');
   });
 });

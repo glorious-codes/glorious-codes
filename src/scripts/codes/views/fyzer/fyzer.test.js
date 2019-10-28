@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils';
 import viewport from '@scripts/base/components/viewport/viewport';
 import codeViewSummary from '@scripts/codes/components/code-view-summary/code-view-summary';
-import crudDemo from '@scripts/codes/components/crud-demo/crud-demo';
-import crud from './crud';
+import fyzerDemo from '@scripts/codes/components/fyzer-demo/fyzer-demo';
+import fyzer from './fyzer';
 
-describe('Crud View', () => {
+describe('Fyzer View', () => {
   function mountComponent(){
-    return shallowMount(crud);
+    return shallowMount(fyzer);
   }
 
   it('should contain a viewport', () => {
@@ -28,17 +28,17 @@ describe('Crud View', () => {
   it('should code view summary contain a heading', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Crud');
+    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Fyzer');
   });
 
-  it('should code view summary contain a respository name', () => {
+  it('should code view summary contain a repository name', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('repositoryname')).toEqual('glorious-crud');
+    expect(viewSummary.getAttribute('repositoryname')).toEqual('glorious-fyzer');
   });
 
-  it('should contain a crud demo', () => {
+  it('should contain a fyzer demo', () => {
     const wrapper = mountComponent();
-    expect(wrapper.contains(crudDemo)).toEqual(true);
+    expect(wrapper.contains(fyzerDemo)).toEqual(true);
   });
 });
