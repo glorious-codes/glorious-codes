@@ -16,7 +16,7 @@ module.exports = {
     new ExtractTextPlugin(project.styles.dist.filename.prod),
     new PrerenderSPAPlugin({
       staticDir: `${__dirname}/${project.scripts.dist.root}`,
-      routes: ['/', '/author', '/cookie', '/crud', '/demo'],
+      routes: ['/', '/author', '/cookie', '/crud', '/demo', '/fyzer'],
       minify: {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
