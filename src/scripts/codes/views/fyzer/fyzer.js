@@ -10,7 +10,7 @@ import template from './fyzer.html';
 
 const head = seoService.buildHead({
   title: 'Glorious Fyzer',
-  description: 'The tiniest fyzers library.',
+  description: 'Listen when some element just appears above the page fold.',
   keywords: 'glorious, fyzer, page fold',
   imageFilename: 'fyzer-200x200.png'
 });
