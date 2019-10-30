@@ -1,4 +1,4 @@
-import '@images/demo-916x460.png';
+import '@images/demo-250x250.png';
 import seoService from '@scripts/base/services/seo/seo';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
@@ -11,8 +11,7 @@ const head = seoService.buildHead({
   title: 'Glorious Demo',
   description: 'The easiest way to show your code in action.',
   keywords: 'glorious, demo, demonstration, code',
-  imageFilename: 'demo-916x460.png',
-  imageSize: 'large'
+  imageFilename: 'demo-250x250.png'
 });
 
 export default {
