@@ -1,4 +1,4 @@
-import '@images/fyzer-200x200.png';
+import '@images/fyzer-250x250.png';
 import seoService from '@scripts/base/services/seo/seo';
 import row from '@scripts/base/components/row/row';
 import rowItem from '@scripts/base/components/row-item/row-item';
@@ -12,7 +12,7 @@ const head = seoService.buildHead({
   title: 'Glorious Fyzer',
   description: 'Listen when some element just appears above the page fold.',
   keywords: 'glorious, fyzer, page fold',
-  imageFilename: 'fyzer-200x200.png'
+  imageFilename: 'fyzer-250x250.png'
 });
 
 export default {
