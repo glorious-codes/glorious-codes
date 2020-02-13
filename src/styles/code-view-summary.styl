@@ -1,3 +1,6 @@
+@require '_variables'
+@require '_mixins'
+
 .code-view-summary
   .code-weight-badge,
   .github-button-container
@@ -19,3 +22,12 @@
     &:focus,
     &:active
       border-bottom-color transparent
+
+.code-view-summary-banner
+  display inline-block
+  padding 8px 10px 5px
+  color $color-grey-semi-dark
+  border 1px solid $color-grey-semi-light
+  border-radius(5px)
+  .icon
+    margin-right 5px
