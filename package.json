@@ -7,7 +7,7 @@
     "format": "./node_modules/eslint/bin/eslint.js './src/**/*.js'",
     "build": "cross-env NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --hide-modules",
     "test": "NODE_ENV=test && ./node_modules/jest/bin/jest.js",
-    "deploy": "./node_modules/firebase-tools/bin/firebase deploy --non-interactive"
+    "deploy": "firebase deploy --non-interactive"
   },
   "dependencies": {
     "@glorious/demo": "^0.9.0",
