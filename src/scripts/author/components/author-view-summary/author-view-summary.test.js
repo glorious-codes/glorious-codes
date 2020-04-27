@@ -42,7 +42,7 @@ describe('Author View Summary', () => {
   });
 
   it('should contain link for Teleflik project', () => {
-    const link = 'http://teleflik.com/?utm_source=glorious-codes&utm_medium=author';
+    const link = 'https://play.google.com/store/apps/details?id=com.ionicframework.teleflik479683';
     const wrapper = mountComponent();
     const projectLinks = wrapper.findAll('a');
     expect(projectLinks.at(3).attributes('href')).toEqual(link);
