@@ -2,6 +2,7 @@
 Glorious Codes website
 
 [![CircleCI](https://circleci.com/gh/glorious-codes/glorious-codes/tree/master.svg?style=svg)](https://circleci.com/gh/glorious-codes/glorious-codes/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/glorious-codes/glorious-codes/badge.svg?branch=master)](https://coveralls.io/github/glorious-codes/glorious-codes?branch=master)
 
 ## Contributing
 
