@@ -3,6 +3,7 @@ import codesCookie from '@scripts/codes/views/cookie/cookie';
 import codesCrud from '@scripts/codes/views/crud/crud';
 import codesDemo from '@scripts/codes/views/demo/demo';
 import codesFyzer from '@scripts/codes/views/fyzer/fyzer';
+import codesRasket from '@scripts/codes/views/rasket/rasket';
 import authorHome from '@scripts/author/views/home/home';
 
 const routes = [
@@ -44,6 +45,14 @@ const routes = [
     component: codesFyzer,
     codesMenu: {
       text: 'Glorious Fyzer'
+    }
+  },
+  {
+    path: '/rasket',
+    name: 'rasket',
+    component: codesRasket,
+    codesMenu: {
+      text: 'Glorious Rasket'
     }
   },
   {
