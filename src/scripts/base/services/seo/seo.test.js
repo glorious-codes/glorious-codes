@@ -35,6 +35,11 @@ describe('SEO Service', () => {
     expect(data.meta[3].content).toEqual('summary');
   });
 
+  it('should set glorious codes thumbnail by default', () => {
+    const data = seoService.buildHead({});
+    expect(data.meta[11].content).toEqual('http://localhost:7000/images/codes-250x250.png');
+  });
+
   it('should optionally set a large twitter card', () => {
     const data = seoService.buildHead({ imageSize: 'large' });
     expect(data.meta[3].content).toEqual('summary_large_image');
