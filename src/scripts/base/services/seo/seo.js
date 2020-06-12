@@ -1,10 +1,10 @@
+import '@images/codes-250x250.png';
 import ENV from '@environment';
 
 const _public = {};
 
 _public.buildHead = ({ title, description, keywords, imageFilename, imageSize }) => {
   const desc = Array.isArray(description) ? description.join(' ') : description;
-  const imageUrl = `${ENV.APP.BASE_URL}/images/${imageFilename}`;
   return {
     title: {
       inner: title
@@ -24,13 +24,18 @@ _public.buildHead = ({ title, description, keywords, imageFilename, imageSize })
       { itemprop: 'desc', content: desc },
       // Facebook / Open Graph
       { property: 'og:title', content: title },
-      { property: 'og:image', content: imageUrl }
+      { property: 'og:image', content: buildImageUrlPath(imageFilename) }
     ]
   };
 };
 
 function buildTwitterCardSize(imageSize){
   return imageSize == 'large' ? 'summary_large_image' : 'summary';
+}
+
+function buildImageUrlPath(imageFilename){
+  const filename = imageFilename || 'codes-250x250.png';
+  return `${ENV.APP.BASE_URL}/images/${filename}`;
 }
 
 export default _public;
