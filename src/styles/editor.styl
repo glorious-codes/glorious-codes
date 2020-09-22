@@ -1,6 +1,8 @@
 @require '_variables'
 @require '_mixins'
 
+$font-size = 13px
+
 .editor
   position relative
   height 400px
@@ -9,6 +11,7 @@
   .codeflask
     background transparent
   .codeflask__flatten
+    font-size $font-size
     word-wrap normal
   .codeflask__textarea
     color transparent
@@ -27,4 +30,5 @@
   pre[class*=language-]
     background none
     color inherit
+    font-size $font-size
     line-height 20px
