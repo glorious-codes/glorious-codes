@@ -39,7 +39,7 @@ const subscriptionId = fyzer.subscribe(element, () => {
   // element appears above the fold.
 });
 
-// When you no longer needs to observe the element's
+// When you no longer need to observe the element's
 // position, you can unsubscribe from Fyzer:
 fyzer.unsubscribe(subscriptionId);
 `;
