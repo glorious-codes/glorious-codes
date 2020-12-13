@@ -10,7 +10,7 @@
     "deploy": "firebase deploy --non-interactive"
   },
   "dependencies": {
-    "@glorious/demo": "^0.11.2",
+    "@glorious/demo": "^0.11.4",
     "clipboard": "^2.0.1",
     "codeflask": "^1.2.1",
     "ionicons": "^2.0.1",
