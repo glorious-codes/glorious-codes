@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router';
 import routesMock from '@mocks/routes';
+import { pause } from '@scripts/base/services/testing/testing';
 import analyticsService from '@scripts/base/services/analytics/analytics';
 import routeService from './route';
 
@@ -94,12 +95,10 @@ describe('Route Service', () => {
     expect(window.open).toHaveBeenCalledWith(`${url}?name=Jo%C3%A3o&surname=Guimar%C3%A3es`);
   });
 
-  it('should track route navigation', () => {
-    const toPathMock = '/mock';
+  it('should track route navigation', async () => {
     routeService.setRouter(router);
-    router.afterHooks[0]({
-      path: toPathMock
-    });
-    expect(analyticsService.trackPageView).toHaveBeenCalledWith(toPathMock);
+    router.afterHooks[0]();
+    await pause();
+    expect(analyticsService.trackPageView).toHaveBeenCalled();
   });
 });

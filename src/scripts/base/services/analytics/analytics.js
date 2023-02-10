@@ -1,45 +1,19 @@
-import dateService from '@scripts/base/services/date/date';
-import inspectletService from '@scripts/base/services/inspectlet/inspectlet';
+import ENV from '@environment';
+import GAnalytics from '@glorious/analytics';
 
-let ANALYTICS_ENV;
+let analytics;
+
 const _public = {};
 
-_public.init = analyticsEnv => {
-  ANALYTICS_ENV = analyticsEnv;
-  buildGoogleAnalyticsScriptTag(ANALYTICS_ENV.GOOGLE);
-  configAnalytics(ANALYTICS_ENV.GOOGLE.ID);
-  configInspectlet(ANALYTICS_ENV.INSPECTLET);
+_public.init = () => {
+  const { DOMAIN, OPTIONS } = ENV.ANALYTICS.PLAUSIBLE;
+  analytics = new GAnalytics();
+  analytics.init(DOMAIN, OPTIONS);
+  _public.trackPageView();
 };
 
-_public.trackPageView = path => {
-  configAnalytics(ANALYTICS_ENV.GOOGLE.ID, path);
+_public.trackPageView = () => {
+  analytics.trackPageview();
 };
-
-function buildGoogleAnalyticsScriptTag(GOOGLE_ANALYTICS_ENV){
-  const tag = document.createElement('script');
-  tag.setAttribute('async', 'true');
-  tag.setAttribute('src', `${GOOGLE_ANALYTICS_ENV.BASE_URL}?id=${GOOGLE_ANALYTICS_ENV.ID}`);
-  document.head.appendChild(tag);
-}
-
-function configAnalytics(id, path){
-  if(!path)
-    gtag('js', dateService.getNow());
-  gtag('config', id, {page_path: (path || getLocationPath())});
-}
-
-function getLocationPath(){
-  return window.location.hash.replace('#/','/');
-}
-
-function gtag(){
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(arguments);
-}
-
-function configInspectlet(INSPECTLET){
-  if(INSPECTLET.ENABLED)
-    inspectletService.init(INSPECTLET.ID);
-}
 
 export default _public;
