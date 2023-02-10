@@ -1,22 +1,47 @@
-const fs = require('fs'),
-  path = require('path'),
-  webpack = require('webpack'),
-  ExtractTextPlugin = require("extract-text-webpack-plugin"),
-  PrerenderSPAPlugin = require('prerender-spa-plugin'),
-  project = require('./project.json'),
-  Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const webpack = require('webpack');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin-next');
+const project = require('./project.json');
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+
+function getRoutes(){
+  return [
+    '/',
+    '/author',
+    '/cookie',
+    '/crud',
+    '/demo',
+    '/fyzer',
+    '/rasket'
+  ].map(path => `${path}?analytics=disabled`)
+}
 
 module.exports = {
-  devtool: '#source-map',
+  mode: 'production',
+  devtool: 'source-map',
   output: {
     filename: project.scripts.dist.filename.prod
   },
+  optimization: {
+    minimizer: [
+      new webpack.SourceMapDevToolPlugin(),
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        terserOptions: {
+          mangle: true,
+          compress: {
+            warnings: false,
+          },
+          sourceMap: true
+        }
+      })
+    ]
+  },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin(project.styles.dist.filename.prod),
     new PrerenderSPAPlugin({
       staticDir: `${__dirname}/${project.scripts.dist.root}`,
-      routes: ['/', '/author', '/cookie', '/crud', '/demo', '/fyzer', '/rasket'],
+      routes: getRoutes(),
       minify: {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
@@ -24,11 +49,11 @@ module.exports = {
         keepClosingSlash: true,
         sortAttributes: true
       },
-      renderer: new Renderer({
+      renderer: require('@prerenderer/renderer-puppeteer'),
+      rendererOptions: {
         headless: true,
-        renderAfterDocumentEvent: 'render-event',
         args: ['–no-sandbox', '–disable-setuid-sandbox']
-      })
+      }
     })
   ]
 }

@@ -1,8 +1,8 @@
-const webpack = require('webpack'),
-  HtmlWebpackPlugin = require('html-webpack-plugin')
-  ExtractTextPlugin = require("extract-text-webpack-plugin")
-  project = require('./project.json'),
-  env = process.env.NODE_ENV || 'development';
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const project = require('./project.json');
+const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: `${__dirname}/${project.scripts.source.entry}`,
@@ -20,25 +20,18 @@ module.exports = {
       {
         test: /\.html$/,
         include: [`${__dirname}/${project.scripts.source.root}`],
-        use: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          minimize: false
+        }
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            { loader: 'css-loader', options: { minimize: true } }
-          ]
-        })
+        use: [ MiniCssExtractPlugin.loader, 'css-loader' ]
       },
       {
         test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { minimize: true } },
-            'stylus-loader'
-          ]
-        })
+        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader' ]
       },
       {
         test: /\.(ttf|eot|woff|woff2|ionicons\.svg)$/,
@@ -73,6 +66,9 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: project.styles.dist.filename[env]
     }),
     new webpack.DefinePlugin({
       'process.env': {

@@ -16,8 +16,8 @@
     "dist": {
       "root": "dist",
       "filename": {
-        "prod": "[name]-[hash].js",
-        "dev": "[name].js"
+        "production": "[name]-[contenthash].js",
+        "development": "[name].js"
       }
     }
   },
@@ -27,8 +27,8 @@
     },
     "dist": {
       "filename": {
-        "prod": "[name]-[hash].css",
-        "dev": "[name].css"
+        "production": "[name]-[contenthash].css",
+        "development": "[name].css"
       }
     }
   },

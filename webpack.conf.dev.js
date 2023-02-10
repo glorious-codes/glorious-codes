@@ -1,19 +1,16 @@
-const fs = require('fs'),
-  webpack = require('webpack'),
-  ExtractTextPlugin = require("extract-text-webpack-plugin"),
-  project = require('./project.json');
+const webpack = require('webpack');
+const project = require('./project.json');
 
 module.exports = {
-  devtool: '#eval-source-map',
-  output: {
-    filename: project.scripts.dist.filename.dev
-  },
+  mode: 'development',
+  devtool: 'inline-source-map',
   plugins: [
-    new ExtractTextPlugin(project.styles.dist.filename.dev)
+    new webpack.SourceMapDevToolPlugin()
   ],
   devServer: {
-    historyApiFallback: true,
-    noInfo: false,
-    port: 7000
+    host: '0.0.0.0',
+    hot: true,
+    port: 9000,
+    historyApiFallback: true
   }
 }

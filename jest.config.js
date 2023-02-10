@@ -20,7 +20,7 @@ module.exports = {
     '@mocks\/(.*)$': `<rootDir>/${project.mocks.source.root}$1`,
     '^.+\\.css$': '<rootDir>/src/mocks/raw-files.js'
   },
-  "setupTestFrameworkScriptFile": "<rootDir>/jest.config.vue.js",
+  "setupFilesAfterEnv": ["<rootDir>/jest.config.vue.js"],
   "transform": {
     '^.+\\.(png|styl)$': '<rootDir>/src/mocks/raw-files.js',
     "^.+\\.js$": "babel-jest",

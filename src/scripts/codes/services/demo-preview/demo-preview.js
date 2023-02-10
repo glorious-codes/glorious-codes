@@ -20,8 +20,7 @@ function clearDemoPreviewContainer(){
 
 function removeCurrentDemoCodeScriptTag(){
   const tag = document.querySelector('[data-demo-code]');
-  if(tag)
-    tag.remove();
+  if(tag) tag.remove();
 }
 
 function configGlobalVariables(errorCallback){
@@ -31,10 +30,7 @@ function configGlobalVariables(errorCallback){
 }
 
 function buildCompilationErrorHandler(errorCallback){
-  const compilationErrorHandler = err => {
-    errorCallback(err);
-  };
-  return compilationErrorHandler;
+  return err => errorCallback(err);
 }
 
 function setGlobalVariable(name, variable){
@@ -60,9 +56,7 @@ function wrapInsideIIFE(demoCode){
 }
 
 function getWindowPropsToBlock(){
-  return Object.getOwnPropertyNames(window).filter(prop => {
-    return !shouldIgnoreWindowProp(prop);
-  });
+  return Object.getOwnPropertyNames(window).filter(prop => !shouldIgnoreWindowProp(prop));
 }
 
 function shouldIgnoreWindowProp(attr){
@@ -72,7 +66,8 @@ function shouldIgnoreWindowProp(attr){
     'compilationErrorHandler',
     'eval',
     '__core - js_shared__',
-    '__core-js_shared__'
+    '__core-js_shared__',
+    'jest-symbol-do-not-touch'
   ].includes(attr);
 }
 
