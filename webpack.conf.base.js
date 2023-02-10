@@ -7,6 +7,7 @@ const env = process.env.NODE_ENV || 'development';
 module.exports = {
   entry: `${__dirname}/${project.scripts.source.entry}`,
   output: {
+    filename: project.scripts.dist.filename[env],
     path: `${__dirname}/${project.scripts.dist.root}`,
     publicPath: '/'
   },

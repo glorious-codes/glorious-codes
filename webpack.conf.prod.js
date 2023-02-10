@@ -20,9 +20,6 @@ function getRoutes(){
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
-  output: {
-    filename: project.scripts.dist.filename.prod
-  },
   optimization: {
     minimizer: [
       new webpack.SourceMapDevToolPlugin(),
