@@ -2,6 +2,12 @@
   "hosting": {
     "public": "dist",
     "cleanUrls": true,
-    "trailingSlash": false
+    "trailingSlash": false,
+    "headers": [{
+      "source": "**/*.@(jpg|jpeg|gif|png|js|css|svg)",
+      "headers": [
+        {"key": "Cache-Control", "value": "max-age=108000"}
+      ]
+    }]
   }
 }
