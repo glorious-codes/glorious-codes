@@ -2,15 +2,12 @@
 @require '_mixins'
 
 .topbar
+  display flex
+  align-items center
   position fixed
   top 0
   left 0
   right 0
-  padding 10px 0
+  height 70px
   background-color alpha($color-lightest, .95)
   z-index $layer-low
-  clearfix()
-  .logo
-    float left
-  .app-menu
-    float left

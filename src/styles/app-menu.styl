@@ -3,15 +3,13 @@
 
 .app-menu
   .list
-    clearfix()
+    display flex
   .list-item
-    float left
-    line-height 50px
     &:not(:first-child)
       margin-top 0
       margin-left 35px
   a
-    color $color-grey
+    color $color-grey-dark
     font-family 'Fjalla One', Helvetica, Arial, sans-serif
     font-size $font-size-xs
     text-transform uppercase
@@ -20,10 +18,11 @@
     &:focus,
     &:active
       color $color-grey-dark
-      border-bottom-color transparent
-    &.router-link-exact-active
+      border-bottom-color $color-grey-dark
+    &.router-link-active
       color $color-primary
       cursor default
+      border-bottom-color transparent
     .icon
       margin-right 5px
       color inherit
