@@ -13,7 +13,7 @@ const head = seoService.buildHead({
     'Glorious Codes is a project that values clean code and continuous',
     'refactoring as a way of getting high quality software.'
   ],
-  keywords: 'npm, packages, glorious, demo, cookie',
+  keywords: 'npm, packages, glorious, demo, pitsby, taslonic, cookie',
   imageFilename: 'codes-916x460.png'
 });
 
