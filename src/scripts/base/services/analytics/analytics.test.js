@@ -19,16 +19,12 @@ describe('Analytics Service', () => {
         trackLocalhost: false
       }
     );
-  });
-
-  it('should track page view on initialize', () => {
-    analyticsService.init();
-    expect(ganalyticsInstanceMock.trackPageview).toHaveBeenCalledTimes(1);
+    expect(ganalyticsInstanceMock.trackPageview).toHaveBeenCalledTimes(0);
   });
 
   it('should track page view', () => {
     analyticsService.init();
     analyticsService.trackPageView();
-    expect(ganalyticsInstanceMock.trackPageview).toHaveBeenCalledTimes(2);
+    expect(ganalyticsInstanceMock.trackPageview).toHaveBeenCalledTimes(1);
   });
 });

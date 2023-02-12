@@ -9,11 +9,10 @@ _public.init = () => {
   const { DOMAIN, OPTIONS } = ENV.ANALYTICS.PLAUSIBLE;
   analytics = new GAnalytics();
   analytics.init(DOMAIN, OPTIONS);
-  _public.trackPageView();
 };
 
 _public.trackPageView = () => {
-  analytics.trackPageview();
+  analytics && analytics.trackPageview();
 };
 
 export default _public;
