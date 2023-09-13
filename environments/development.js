@@ -4,7 +4,7 @@ export default {
   },
   ANALYTICS: {
     PLAUSIBLE: {
-      DOMAIN: 'dev.glorious.codes',
+      DOMAIN: 'dev.compilorama.com',
       OPTIONS: { trackLocalhost: false }
     }
   }

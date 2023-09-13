@@ -9,9 +9,9 @@ import fyzerDemo from '@scripts/codes/components/fyzer-demo/fyzer-demo';
 import template from './fyzer.html';
 
 const head = seoService.buildHead({
-  title: 'Glorious Fyzer',
+  title: 'Fyzer',
   description: 'Listen when some element just appears above the page fold.',
-  keywords: 'glorious, fyzer, page fold',
+  keywords: 'fyzer, page fold',
   imageFilename: 'fyzer-250x250.png'
 });
 

@@ -1,4 +1,4 @@
-import '@images/codes-250x250.png';
+import '@images/social-250x250.png';
 import ENV from '@environment';
 
 const _public = {};
@@ -17,8 +17,6 @@ _public.buildHead = ({ title, description, keywords, imageFilename, imageSize })
       { name: 'twitter:card', content: buildTwitterCardSize(imageSize) },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: desc },
-      { name: 'twitter:site', content: '@gloriouscodes' },
-      { name: 'twitter:creator', content: '@rcamargo' },
       // Google+ / Schema.org
       { itemprop: 'name', content: title },
       { itemprop: 'desc', content: desc },
@@ -34,7 +32,7 @@ function buildTwitterCardSize(imageSize){
 }
 
 function buildImageUrlPath(imageFilename){
-  const filename = imageFilename || 'codes-250x250.png';
+  const filename = imageFilename || 'social-250x250.png';
   return `${ENV.APP.BASE_URL}/images/${filename}`;
 }
 

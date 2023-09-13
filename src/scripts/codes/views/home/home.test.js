@@ -27,7 +27,7 @@ describe('Codes Home View', () => {
   it('should view summary contain a heading', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('viewsummary-stub').element;
-    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Codes');
+    expect(viewSummary.getAttribute('heading')).toEqual('Compilorama');
   });
 
   it('should view summary heading to be a hero heading', () => {

@@ -8,9 +8,9 @@ import rasketDemo from '@scripts/codes/components/rasket-demo/rasket-demo';
 import template from './rasket.html';
 
 const head = seoService.buildHead({
-  title: 'Glorious Rasket',
+  title: 'Rasket',
   description: 'A simple Pub-Sub implementation.',
-  keywords: 'glorious, rasket, pub-sub pattern'
+  keywords: 'rasket, pub-sub pattern'
 });
 
 export default {

@@ -18,18 +18,12 @@ const routes = [
   {
     path: '/cookie',
     name: 'cookie',
-    component: codesCookie,
-    codesMenu: {
-      text: 'Glorious Cookie'
-    }
+    component: codesCookie
   },
   {
     path: '/crud',
     name: 'crud',
-    component: codesCrud,
-    codesMenu: {
-      text: 'Glorious Crud'
-    }
+    component: codesCrud
   },
   {
     path: '/demo',
@@ -44,7 +38,7 @@ const routes = [
     name: 'fyzer',
     component: codesFyzer,
     codesMenu: {
-      text: 'Glorious Fyzer'
+      text: 'Fyzer'
     }
   },
   {
@@ -52,7 +46,7 @@ const routes = [
     name: 'rasket',
     component: codesRasket,
     codesMenu: {
-      text: 'Glorious Rasket'
+      text: 'Rasket'
     }
   },
   {

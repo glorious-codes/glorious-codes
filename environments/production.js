@@ -1,10 +1,10 @@
 export default {
   APP: {
-    BASE_URL: 'https://glorious.codes'
+    BASE_URL: 'https://compilorama.com'
   },
   ANALYTICS: {
     PLAUSIBLE: {
-      DOMAIN: 'glorious.codes'
+      DOMAIN: 'compilorama.com'
     }
   }
 };

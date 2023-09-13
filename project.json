@@ -48,12 +48,12 @@
   },
   "favicon": {
     "source": {
-      "file": "src/images/favicon-glorious-codes.png"
+      "file": "src/images/favicon-compilorama.png"
     }
   },
   "tests": {
     "source": {
-      "files": "src/scripts/**/!(app|routes|inspectlet).js"
+      "files": "src/scripts/**/!(app|routes).js"
     }
   },
   "mocks": {

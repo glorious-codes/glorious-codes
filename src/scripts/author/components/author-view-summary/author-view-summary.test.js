@@ -1,6 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
 import list from '@scripts/base/components/list/list';
-import listItem from '@scripts/base/components/list-item/list-item';
 import externalLink from '@scripts/base/components/external-link/external-link';
 import viewSummary from '@scripts/base/components/view-summary/view-summary';
 import authorViewSummary from './author-view-summary';
@@ -70,26 +69,15 @@ describe('Author View Summary', () => {
     expect(wrapper.contains(list)).toEqual(true);
   });
 
-  it('should contain three list items', () => {
-    const wrapper = mountComponent();
-    expect(wrapper.findAll(listItem).length).toEqual(3);
-  });
-
   it('should contain external link for Github', () => {
     const link = 'https://github.com/rafaelcamargo';
     const wrapper = mountComponent();
     expect(wrapper.findAll(externalLink).at(0).attributes('href')).toEqual(link);
   });
 
-  it('should contain external link for Twitter', () => {
-    const link = 'https://twitter.com/rcamargo';
-    const wrapper = mountComponent();
-    expect(wrapper.findAll(externalLink).at(1).attributes('href')).toEqual(link);
-  });
-
   it('should contain external link for Dribbble', () => {
     const link = 'https://dribbble.com/rcamargo';
     const wrapper = mountComponent();
-    expect(wrapper.findAll(externalLink).at(2).attributes('href')).toEqual(link);
+    expect(wrapper.findAll(externalLink).at(1).attributes('href')).toEqual(link);
   });
 });

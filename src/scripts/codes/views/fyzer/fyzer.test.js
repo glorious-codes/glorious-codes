@@ -28,7 +28,7 @@ describe('Fyzer View', () => {
   it('should code view summary contain a heading', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Fyzer');
+    expect(viewSummary.getAttribute('heading')).toEqual('Fyzer');
   });
 
   it('should code view summary contain a repository name', () => {

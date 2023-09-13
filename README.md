@@ -1,5 +1,5 @@
-# Glorious Codes
-Glorious Codes website
+# Compilorama's Website
+Compilorama is a software development company run solely by Rafael Camargo.
 
 [![CircleCI](https://circleci.com/gh/glorious-codes/glorious-codes/tree/master.svg?style=svg)](https://circleci.com/gh/glorious-codes/glorious-codes/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/glorious-codes/glorious-codes/badge.svg?branch=master)](https://coveralls.io/github/glorious-codes/glorious-codes?branch=master)
@@ -10,12 +10,12 @@ Glorious Codes website
 
 2. Clone the repo:
 ``` bash
-git clone git@github.com:glorious-codes/glorious-codes.git
+git clone git@github.com:compilorama/website.git
 ```
 
 3. Go to the project directory
 ``` bash
-cd glorious-codes
+cd website
 ```
 
 4. Install the project dependencies

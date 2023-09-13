@@ -28,7 +28,7 @@ describe('Rasket View', () => {
   it('should code view summary contain a heading', () => {
     const wrapper = mountComponent();
     const viewSummary = wrapper.find('codeviewsummary-stub').element;
-    expect(viewSummary.getAttribute('heading')).toEqual('Glorious Rasket');
+    expect(viewSummary.getAttribute('heading')).toEqual('Rasket');
   });
 
   it('should code view summary contain a repository name', () => {

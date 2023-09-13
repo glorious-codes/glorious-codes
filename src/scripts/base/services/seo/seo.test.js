@@ -20,8 +20,6 @@ describe('SEO Service', () => {
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:title', content: 'Title' },
         { name: 'twitter:description', content: 'Description' },
-        { name: 'twitter:site', content: '@gloriouscodes' },
-        { name: 'twitter:creator', content: '@rcamargo' },
         { itemprop: 'name', content: 'Title' },
         { itemprop: 'desc', content: 'Description' },
         { property: 'og:title', content: 'Title' },
@@ -35,9 +33,9 @@ describe('SEO Service', () => {
     expect(data.meta[3].content).toEqual('summary');
   });
 
-  it('should set glorious codes thumbnail by default', () => {
+  it('should use default thumbnail', () => {
     const data = seoService.buildHead({});
-    expect(data.meta[11].content).toEqual('http://localhost:7000/images/codes-250x250.png');
+    expect(data.meta[9].content).toEqual('http://localhost:7000/images/social-250x250.png');
   });
 
   it('should optionally set a large twitter card', () => {
