@@ -6,7 +6,7 @@
     "headers": [{
       "source": "**/*.@(jpg|jpeg|gif|png|js|css|svg)",
       "headers": [
-        {"key": "Cache-Control", "value": "max-age=2592000"}
+        {"key": "Cache-Control", "value": "max-age=31536000"}
       ]
     }]
   }
