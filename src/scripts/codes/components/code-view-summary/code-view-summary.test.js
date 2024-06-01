@@ -2,7 +2,6 @@ import { shallowMount } from '@vue/test-utils';
 import list from '@scripts/base/components/list/list';
 import listItem from '@scripts/base/components/list-item/list-item';
 import viewSummary from '@scripts/base/components/view-summary/view-summary';
-import codesBackLink from '@scripts/codes/components/codes-back-link/codes-back-link';
 import codeWeightBadge from '@scripts/codes/components/code-weight-badge/code-weight-badge';
 import codeViewSummary from './code-view-summary';
 
@@ -42,14 +41,9 @@ describe('Code View Summary', () => {
     expect(wrapper.contains(list)).toEqual(true);
   });
 
-  it('should contain two list items', () => {
+  it('should contain one list items', () => {
     const wrapper = mountComponent();
-    expect(wrapper.findAll(listItem).length).toEqual(2);
-  });
-
-  it('should contain a link back to codes', () => {
-    const wrapper = mountComponent();
-    expect(wrapper.contains(codesBackLink)).toEqual(true);
+    expect(wrapper.findAll(listItem).length).toEqual(1);
   });
 
   it('should set repository slug', () => {

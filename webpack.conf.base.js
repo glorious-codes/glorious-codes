@@ -35,19 +35,8 @@ module.exports = {
         use: [ MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader' ]
       },
       {
-        test: /\.(ttf|eot|woff|woff2|ionicons\.svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: `${project.fonts.dist.root}`,
-        }
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: project.images.dist.filename,
-          context: project.images.source.context
-        }
+        test: /\.(ttf|eot|woff|woff2|jpg|jpeg|png|svg)/,
+        type: 'asset/resource'
       }
     ]
   },
