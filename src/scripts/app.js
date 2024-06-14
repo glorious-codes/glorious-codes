@@ -2,7 +2,6 @@ import '@styles/_native.styl';
 import Vue from 'vue';
 import VueHead from 'vue-head';
 import VueRouter from 'vue-router';
-import ENV from '@environment';
 import routes from './routes';
 import topbar from '@scripts/base/components/topbar/topbar';
 import routeService from '@scripts/base/services/route/route';
@@ -21,7 +20,7 @@ const router = new VueRouter({
 });
 
 routeService.setRouter(router);
-analyticsService.init(ENV.ANALYTICS);
+analyticsService.init();
 
 const app = {
   name: 'app',

@@ -1,7 +1,5 @@
 import VueRouter from 'vue-router';
 import routesMock from '@mocks/routes';
-import { pause } from '@scripts/base/services/testing/testing';
-import analyticsService from '@scripts/base/services/analytics/analytics';
 import routeService from './route';
 
 describe('Route Service', () => {
@@ -20,7 +18,6 @@ describe('Route Service', () => {
   beforeEach(() => {
     mockRouterInstance();
     window.open = jest.fn();
-    analyticsService.trackPageView = jest.fn();
     routeService.setRouter(router);
   });
 
@@ -93,12 +90,5 @@ describe('Route Service', () => {
     };
     routeService.openUrl(url, params);
     expect(window.open).toHaveBeenCalledWith(`${url}?name=Jo%C3%A3o&surname=Guimar%C3%A3es`);
-  });
-
-  it('should track route navigation', async () => {
-    routeService.setRouter(router);
-    router.afterHooks[0]();
-    await pause();
-    expect(analyticsService.trackPageView).toHaveBeenCalled();
   });
 });

@@ -1,12 +1,9 @@
-import analyticsService from '@scripts/base/services/analytics/analytics';
-
 const _public = {};
 
 let router;
 
 _public.setRouter = routerInstance => {
   router = routerInstance;
-  startTrackingRouteNavigation();
 };
 
 _public.getRoutes = () => {
@@ -37,10 +34,6 @@ _public.setQueryParams = query => {
 _public.openUrl = (url, params) => {
   window.open(buildFullUrl(url, params));
 };
-
-function startTrackingRouteNavigation(){
-  router.afterEach(() => setTimeout(() => analyticsService.trackPageView()));
-}
 
 function buildFullUrl(url, params){
   return params ? `${url}?${stringifyUrlParams(params)}` : url;
