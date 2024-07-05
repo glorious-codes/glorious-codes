@@ -16,7 +16,7 @@ _public.get = () => {
 _public.buildParameterizedUrl = demoCode => {
   const code = encodeBraces(demoCode);
   const queryParam = INITIAL_CODE_QUERY_PARAM;
-  return `${ENV.APP.BASE_URL}/demo?${queryParam}=${window.btoa(code)}`;
+  return `${ENV.APP.BASE_URL}/?${queryParam}=${window.btoa(code)}`;
 };
 
 function encodeBraces(string){
